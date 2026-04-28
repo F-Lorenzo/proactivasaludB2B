@@ -1,13 +1,8 @@
+import Image from 'next/image'
 import { AnimateIn } from './ui/AnimateIn'
 import { IMPACT_STATS } from '@/lib/constants'
 
 const colorMap = {
-  green: {
-    bg: 'bg-green',
-    text: 'text-white',
-    label: 'text-white/80',
-    desc: 'text-white/65',
-  },
   teal: {
     bg: 'bg-navy',
     text: 'text-teal',
@@ -29,7 +24,7 @@ export function Impact() {
 
         {/* Header */}
         <AnimateIn>
-          <div className="max-w-2xl mb-16 lg:mb-20">
+          <div className="max-w-2xl mb-12 lg:mb-16">
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
               <span className="font-body font-semibold text-xs tracking-widest uppercase text-teal">
@@ -43,21 +38,49 @@ export function Impact() {
           </div>
         </AnimateIn>
 
+        {/* Human image banner */}
+        <AnimateIn delay={100}>
+          <div className="relative w-full h-56 lg:h-72 rounded-3xl overflow-hidden mb-10 lg:mb-12">
+            <Image
+              src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=1400&q=85"
+              alt="Adultos mayores activos y saludables gracias a gestión preventiva"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+            />
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(14,36,73,0.75) 0%, rgba(14,36,73,0.35) 60%, transparent 100%)' }} />
+            <div className="absolute inset-0 flex items-center px-8 lg:px-12">
+              <blockquote className="max-w-md">
+                <p className="font-display text-xl lg:text-2xl text-white leading-snug font-bold">
+                  "Prevenir cuesta menos que tratar. Siempre."
+                </p>
+                <p className="font-body text-sm text-white/60 mt-3">
+                  Principio de salud preventiva en poblaciones +50
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </AnimateIn>
+
         {/* Stats grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {IMPACT_STATS.map((stat, i) => {
+            const isMain = stat.color === 'green'
             const colors = colorMap[stat.color as keyof typeof colorMap] ?? colorMap.navy
             return (
               <AnimateIn key={stat.label} delay={i * 100}>
-                <div className={`${colors.bg} rounded-2xl p-8 lg:p-9 flex flex-col gap-4 h-full`}>
-                  <p className={`font-display text-5xl lg:text-6xl font-bold leading-none ${colors.text}`}>
+                <div
+                  className={`${isMain ? '' : colors.bg} rounded-2xl p-8 lg:p-9 flex flex-col gap-4 h-full`}
+                  style={isMain ? { background: 'linear-gradient(135deg, #1a4a8a 0%, #1e5ba6 50%, #2568c0 100%)' } : undefined}
+                >
+                  <p className={`font-display font-bold leading-none ${isMain ? 'text-6xl lg:text-7xl text-white' : `text-5xl lg:text-6xl ${colors.text}`}`}>
                     {stat.value}
                   </p>
                   <div>
-                    <p className={`font-body font-semibold text-base ${colors.label} mb-2`}>
+                    <p className={`font-body font-semibold mb-2 ${isMain ? 'text-lg text-white/90' : `text-base ${colors.label}`}`}>
                       {stat.label}
                     </p>
-                    <p className={`font-body text-sm leading-relaxed ${colors.desc}`}>
+                    <p className={`font-body text-sm leading-relaxed ${isMain ? 'text-white/70' : colors.desc}`}>
                       {stat.description}
                     </p>
                   </div>
@@ -69,7 +92,7 @@ export function Impact() {
 
         {/* Disclaimer */}
         <AnimateIn delay={450}>
-          <p className="mt-8 font-body text-xs text-ink-soft text-center max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-10 font-body text-sm text-ink-mid text-center max-w-2xl mx-auto leading-relaxed">
             Proyecciones basadas en estudios de salud preventiva en poblaciones +50. Los resultados
             reales dependen del tamaño y perfil de la cartera. El piloto generará datos específicos
             para su empresa.

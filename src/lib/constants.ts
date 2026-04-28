@@ -170,8 +170,8 @@ export const DIFFERENTIALS = [
 ]
 
 export const CONTACT_INFO = {
-  phone: '5263-0125',
-  email: 'admision@asistart.com.ar',
+  phone: '+54 11 5263-0125',
+  email: 'info@proactivasalud.com',
   address: 'Av. Hipólito Yrigoyen 688, Avellaneda',
-  company: 'ASISTART — gestión integral de salud',
+  company: 'ProactivaSalud — gestión integral de salud',
 }

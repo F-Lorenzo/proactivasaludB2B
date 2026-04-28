@@ -89,7 +89,7 @@ export function Solution() {
                       <p className="font-body font-semibold text-white text-base mb-1">
                         {step.title}
                       </p>
-                      <p className="font-body text-sm text-white/55 leading-relaxed">
+                      <p className="font-body text-sm text-white/75 leading-relaxed">
                         {step.body}
                       </p>
                     </div>
@@ -98,8 +98,8 @@ export function Solution() {
               </div>
 
               <div className="mt-8 pt-8 border-t border-white/10">
-                <p className="font-body text-sm text-white/50">
-                  Piloto de lanzamiento · Primera cohorte <strong className="text-white/70 font-semibold">Mayo 2026</strong>
+                <p className="font-body text-sm text-white/60">
+                  Piloto de lanzamiento · Primer cohorte <strong className="text-white/85 font-semibold">Mayo 2026</strong>
                 </p>
               </div>
             </div>

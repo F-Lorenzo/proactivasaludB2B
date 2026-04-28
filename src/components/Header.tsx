@@ -6,7 +6,7 @@ import Link from 'next/link'
 const NAV = [
   { label: 'El problema', href: '#problema' },
   { label: 'La solución', href: '#solucion' },
-  { label: 'Impacto', href: '#impacto' },
+  { label: 'Impacto económico', href: '#impacto' },
   { label: 'Servicios', href: '#servicios' },
 ]
 

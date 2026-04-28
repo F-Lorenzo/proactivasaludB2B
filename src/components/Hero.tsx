@@ -3,14 +3,20 @@ import { ArrowRight, ShieldCheck } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-navy overflow-hidden pt-16">
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden pt-16"
+      style={{ background: 'linear-gradient(150deg, #0b1e3a 0%, #102d52 35%, #143d6e 65%, #1a4d84 100%)' }}
+    >
       {/* Background texture */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10"
-          style={{ background: 'radial-gradient(ellipse at top right, oklch(0.52 0.13 195), transparent 60%)' }}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-15"
+          style={{ background: 'radial-gradient(ellipse at top right, oklch(0.52 0.13 215), transparent 60%)' }}
         />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-5"
-          style={{ background: 'oklch(0.54 0.16 155)', filter: 'blur(80px)' }}
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-8"
+          style={{ background: 'oklch(0.45 0.18 240)', filter: 'blur(100px)' }}
+        />
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full opacity-5"
+          style={{ background: 'oklch(0.65 0.15 205)', filter: 'blur(80px)' }}
         />
       </div>
 
@@ -30,7 +36,7 @@ export function Hero() {
             {/* Headline */}
             <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
               El 60–80% del gasto<br />de su cartera es<br />
-              <span className="text-teal">prevenible.</span>
+              <span className="text-white/65">prevenible.</span>
             </h1>
 
             {/* Subheadline */}
@@ -59,7 +65,7 @@ export function Hero() {
             <div className="flex items-center gap-3 pt-2">
               <ShieldCheck size={18} className="text-green flex-shrink-0" aria-hidden="true" />
               <p className="font-body text-sm text-white/50">
-                Programa piloto en preparación · Primera cohorte Mayo 2026
+                Programa piloto en preparación · Primer cohorte Mayo 2026
               </p>
             </div>
           </div>
@@ -80,7 +86,8 @@ export function Hero() {
             </div>
 
             {/* Stat card — top left */}
-            <div className="absolute -top-4 -left-6 bg-green text-white rounded-xl px-5 py-4 shadow-elevated">
+            <div className="absolute -top-4 -left-6 text-white rounded-xl px-5 py-4 shadow-elevated"
+              style={{ background: 'linear-gradient(135deg, #1a4a8a 0%, #2568c0 100%)' }}>
               <p className="font-display text-3xl font-bold leading-none">25%</p>
               <p className="font-body text-xs opacity-85 mt-1">costos médicos</p>
               <p className="font-body text-xs opacity-85">evitables</p>

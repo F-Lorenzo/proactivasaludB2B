@@ -5,7 +5,7 @@ import { CONTACT_INFO } from '@/lib/constants'
 const NAV_LINKS = [
   { label: 'El problema', href: '#problema' },
   { label: 'La solución', href: '#solucion' },
-  { label: 'Impacto', href: '#impacto' },
+  { label: 'Impacto económico', href: '#impacto' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Contacto', href: '#contacto' },
 ]
