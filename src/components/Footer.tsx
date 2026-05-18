@@ -26,7 +26,7 @@ export function Footer() {
                 alt="ProActiva Salud"
                 width={160}
                 height={80}
-                className="h-10 w-auto object-contain brightness-0 invert"
+                className="h-20 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="font-body text-sm text-white/45 leading-relaxed mb-6">
