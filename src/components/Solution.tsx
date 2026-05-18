@@ -41,9 +41,9 @@ export function Solution() {
                       <CircleCheck size={16} className="text-green flex-shrink-0 mt-0.5" aria-hidden="true" />
                       <span className="font-body text-sm font-semibold text-ink">{diff.yes}</span>
                     </div>
-                    <div className="flex items-start gap-3 bg-navy-muted rounded-xl px-4 py-3.5">
-                      <X size={16} className="text-ink-soft flex-shrink-0 mt-0.5" aria-hidden="true" />
-                      <span className="font-body text-sm text-ink-soft">{diff.no}</span>
+                    <div className="flex items-start gap-3 bg-navy-light border border-navy/10 rounded-xl px-4 py-3.5">
+                      <X size={16} className="text-ink-mid flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="font-body text-sm font-medium text-ink-mid">{diff.no}</span>
                     </div>
                   </div>
                 ))}

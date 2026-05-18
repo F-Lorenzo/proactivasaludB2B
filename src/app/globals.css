@@ -7,14 +7,14 @@
   --color-navy-light: oklch(0.92 0.025 255);
   --color-navy-muted: oklch(0.96 0.012 255);
 
-  /* Teal — trust, health */
-  --color-teal: oklch(0.52 0.13 195);
-  --color-teal-dark: oklch(0.36 0.10 195);
-  --color-teal-light: oklch(0.93 0.05 195);
+  /* Green primary — trust, health, action */
+  --color-teal: #80d85b;
+  --color-teal-dark: oklch(0.62 0.18 135);
+  --color-teal-light: oklch(0.94 0.07 135);
 
   /* Green — savings, ROI, positive outcomes */
-  --color-green: oklch(0.54 0.16 155);
-  --color-green-light: oklch(0.93 0.06 155);
+  --color-green: #80d85b;
+  --color-green-light: oklch(0.94 0.07 135);
 
   /* Surface & text */
   --color-surface: oklch(0.99 0.005 255);
@@ -86,7 +86,7 @@ h1, h2, h3 {
 }
 
 :focus-visible {
-  outline: 2px solid oklch(0.52 0.13 195);
+  outline: 2px solid #80d85b;
   outline-offset: 3px;
   border-radius: 4px;
 }

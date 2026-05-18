@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const NAV = [
   { label: 'El problema', href: '#problema' },
@@ -29,13 +30,15 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className={`w-8 h-8 rounded flex items-center justify-center flex-shrink-0 transition-colors ${scrolled ? 'bg-navy' : 'bg-teal'}`}>
-            <span className="font-display font-bold text-white text-xs leading-none">PS</span>
-          </div>
-          <span className={`font-display font-bold text-base leading-tight transition-colors ${scrolled ? 'text-navy' : 'text-white'}`}>
-            Proactiva<span className={scrolled ? 'text-teal' : 'text-teal-light'}> Salud</span>
-          </span>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/logo.png"
+            alt="ProActiva Salud"
+            width={160}
+            height={80}
+            className={`h-10 w-auto object-contain transition-all duration-300 ${scrolled ? 'brightness-0' : 'brightness-0 invert'}`}
+            priority
+          />
         </Link>
 
         {/* Nav */}

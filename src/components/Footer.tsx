@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
@@ -19,13 +20,14 @@ export function Footer() {
 
           {/* Brand */}
           <div className="max-w-sm">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 rounded bg-teal flex items-center justify-center flex-shrink-0">
-                <span className="font-display font-bold text-white text-xs leading-none">PS</span>
-              </div>
-              <span className="font-display font-bold text-base text-white leading-tight">
-                Proactiva<span className="text-teal-light"> Salud</span>
-              </span>
+            <Link href="/" className="inline-flex mb-5">
+              <Image
+                src="/logo.png"
+                alt="ProActiva Salud"
+                width={160}
+                height={80}
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="font-body text-sm text-white/45 leading-relaxed mb-6">
               Plataforma de salud preventiva integral para la Generación Silver.
