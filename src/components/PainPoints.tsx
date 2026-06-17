@@ -68,10 +68,10 @@ export function PainPoints() {
 
         {/* Bottom callout */}
         <AnimateIn delay={400}>
-          <div className="mt-12 lg:mt-16 bg-white/60 backdrop-blur-sm border border-navy/8 rounded-2xl px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4 shadow-card">
+          <div className="mt-12 lg:mt-16 bg-navy rounded-2xl px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex-1">
-              <p className="font-body text-base text-navy/80 leading-relaxed">
-                <strong className="text-navy font-semibold">La ecuación es simple:</strong>{' '}
+              <p className="font-body text-base text-white/80 leading-relaxed">
+                <strong className="text-white font-semibold">La ecuación es simple:</strong>{' '}
                 sin prevención activa, los afiliados mayores consumen cada vez más servicios costosos.
                 La pregunta no es si va a pasar, sino cuándo.
               </p>
