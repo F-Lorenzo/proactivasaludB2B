@@ -25,7 +25,7 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-card'
-          : 'bg-white/30 backdrop-blur-sm'
+          : 'bg-white shadow-card'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -48,7 +48,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`font-body text-sm transition-colors ${
-                scrolled ? 'text-ink-mid hover:text-navy' : 'text-navy/70 hover:text-navy'
+                'text-ink-mid hover:text-navy'
               }`}
             >
               {item.label}
