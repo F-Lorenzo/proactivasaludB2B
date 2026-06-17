@@ -22,7 +22,7 @@ export function PainPoints() {
                 El problema
               </span>
             </div>
-            <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-white leading-tight tracking-tight">
+            <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight">
               Su cartera tiene un problema<br />
               <span className="text-teal">que empeora cada año.</span>
             </h2>
@@ -35,22 +35,22 @@ export function PainPoints() {
             const Icon = iconMap[point.icon as keyof typeof iconMap]
             return (
               <AnimateIn key={point.stat} delay={i * 120}>
-                <div className="bg-navy-mid rounded-2xl p-8 lg:p-10 flex flex-col gap-6 h-full">
+                <div className="bg-white/70 backdrop-blur-sm border border-navy/8 rounded-2xl p-8 lg:p-10 flex flex-col gap-6 h-full shadow-card">
                   {/* Stat */}
                   <div>
-                    <p className="font-display text-5xl lg:text-6xl font-bold text-white leading-none mb-3">
+                    <p className="font-display text-5xl lg:text-6xl font-bold text-navy leading-none mb-3">
                       {point.stat}
                     </p>
-                    <p className="font-body text-lg font-semibold text-white/80 leading-snug">
+                    <p className="font-body text-lg font-semibold text-navy/80 leading-snug">
                       {point.title}
                     </p>
                   </div>
 
                   {/* Divider */}
-                  <div className="w-12 h-px bg-teal/40" aria-hidden="true" />
+                  <div className="w-12 h-px bg-teal/60" aria-hidden="true" />
 
                   {/* Description */}
-                  <p className="font-body text-base text-white/55 leading-relaxed flex-1">
+                  <p className="font-body text-base text-ink-mid leading-relaxed flex-1">
                     {point.description}
                   </p>
 
@@ -68,10 +68,10 @@ export function PainPoints() {
 
         {/* Bottom callout */}
         <AnimateIn delay={400}>
-          <div className="mt-12 lg:mt-16 bg-teal/10 rounded-2xl px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="mt-12 lg:mt-16 bg-white/60 backdrop-blur-sm border border-navy/8 rounded-2xl px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4 shadow-card">
             <div className="flex-1">
-              <p className="font-body text-base text-white/80 leading-relaxed">
-                <strong className="text-white font-semibold">La ecuación es simple:</strong>{' '}
+              <p className="font-body text-base text-navy/80 leading-relaxed">
+                <strong className="text-navy font-semibold">La ecuación es simple:</strong>{' '}
                 sin prevención activa, los afiliados mayores consumen cada vez más servicios costosos.
                 La pregunta no es si va a pasar, sino cuándo.
               </p>
