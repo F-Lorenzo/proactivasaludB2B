@@ -4,45 +4,32 @@ import Image from 'next/image'
 import { AnimateIn } from './ui/AnimateIn'
 import { IMPACT_STATS } from '@/lib/constants'
 
-function PulsingArrow() {
+function PulsingArrow({ direction = 'down', color = '#80d85b' }: { direction?: 'up' | 'down'; color?: string }) {
+  const isUp = direction === 'up'
+  const points = isUp ? '4,14 14,4 24,14' : '4,4 14,14 24,4'
+  // For up arrows: pulse order reversed (3→2→1 lights up sequentially from bottom to top)
+  const animations = isUp
+    ? ['arrowUp3', 'arrowUp2', 'arrowUp1']
+    : ['arrowDown1', 'arrowDown2', 'arrowDown3']
+  const move = isUp ? 'translateY(-4px)' : 'translateY(4px)'
+
   return (
     <div className="relative flex flex-col items-center" style={{ width: 40, height: 64 }}>
       <style>{`
-        @keyframes arrowPulse1 {
-          0%, 100% { opacity: 0.2; transform: translateY(0); }
-          33% { opacity: 1; transform: translateY(4px); }
-        }
-        @keyframes arrowPulse2 {
-          0%, 100% { opacity: 0.2; transform: translateY(0); }
-          33% { opacity: 0.2; transform: translateY(0); }
-          66% { opacity: 1; transform: translateY(4px); }
-        }
-        @keyframes arrowPulse3 {
-          0%, 66% { opacity: 0.2; transform: translateY(0); }
-          100% { opacity: 0.2; transform: translateY(0); }
-          83% { opacity: 1; transform: translateY(4px); }
-        }
-        .ap1 { animation: arrowPulse1 1.6s ease-in-out infinite; }
-        .ap2 { animation: arrowPulse2 1.6s ease-in-out infinite; }
-        .ap3 { animation: arrowPulse3 1.6s ease-in-out infinite; }
+        @keyframes arrowDown1 { 0%,100%{opacity:.2;transform:translateY(0)} 33%{opacity:1;transform:${move}} }
+        @keyframes arrowDown2 { 0%,33%,100%{opacity:.2;transform:translateY(0)} 66%{opacity:1;transform:${move}} }
+        @keyframes arrowDown3 { 0%,66%,100%{opacity:.2;transform:translateY(0)} 83%{opacity:1;transform:${move}} }
+        @keyframes arrowUp1   { 0%,100%{opacity:.2;transform:translateY(0)} 33%{opacity:1;transform:${move}} }
+        @keyframes arrowUp2   { 0%,33%,100%{opacity:.2;transform:translateY(0)} 66%{opacity:1;transform:${move}} }
+        @keyframes arrowUp3   { 0%,66%,100%{opacity:.2;transform:translateY(0)} 83%{opacity:1;transform:${move}} }
+        .pa-0{animation:${animations[0]} 1.6s ease-in-out infinite}
+        .pa-1{animation:${animations[1]} 1.6s ease-in-out infinite}
+        .pa-2{animation:${animations[2]} 1.6s ease-in-out infinite}
       `}</style>
       {[0, 1, 2].map((i) => (
-        <svg
-          key={i}
-          className={`ap${i + 1}`}
-          width="28" height="18"
-          viewBox="0 0 28 18"
-          fill="none"
-          aria-hidden="true"
-          style={{ marginBottom: i < 2 ? -4 : 0 }}
-        >
-          <polyline
-            points="4,4 14,14 24,4"
-            stroke="#80d85b"
-            strokeWidth="3.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+        <svg key={i} className={`pa-${i}`} width="28" height="18" viewBox="0 0 28 18" fill="none" aria-hidden="true"
+          style={{ marginBottom: i < 2 ? -4 : 0 }}>
+          <polyline points={points} stroke={color} strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ))}
     </div>
@@ -121,7 +108,9 @@ export function Impact() {
                   style={isMain ? { background: 'linear-gradient(135deg, #1a4a8a 0%, #1e5ba6 50%, #2568c0 100%)' } : undefined}
                 >
                   {stat.value === '↓' ? (
-                    <PulsingArrow />
+                    <PulsingArrow direction="down" color="#80d85b" />
+                  ) : stat.value === '↑' ? (
+                    <PulsingArrow direction="up" color={stat.color === 'teal' ? '#80d85b' : '#ffffff'} />
                   ) : (
                     <p className={`font-display font-bold leading-none ${isMain ? 'text-7xl lg:text-8xl text-white' : `text-6xl lg:text-7xl ${colors.text}`}`}>
                       {stat.value}
