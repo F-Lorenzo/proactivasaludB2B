@@ -48,7 +48,7 @@ export function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
-      style={{ background: 'linear-gradient(150deg, #1a3d7a 0%, #2050a0 40%, #2860b8 70%, #3070cc 100%)' }}
+      style={{ background: 'transparent' }}
     >
       <style>{`
         @keyframes floatA {

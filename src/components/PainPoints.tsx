@@ -10,7 +10,7 @@ const iconMap = {
 
 export function PainPoints() {
   return (
-    <section id="problema" className="bg-navy py-24 lg:py-32">
+    <section id="problema" className="bg-transparent py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section header */}

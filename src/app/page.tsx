@@ -13,8 +13,10 @@ export default function Home() {
     <>
       <Header />
       <main id="main">
-        <Hero />
-        <PainPoints />
+        <div style={{ background: 'linear-gradient(to bottom, #1a3d7a 0%, #1e4590 30%, #162d60 60%, #0d1e3c 85%, #0b1e3a 100%)' }}>
+          <Hero />
+          <PainPoints />
+        </div>
         <Solution />
         <Impact />
         <Services />
