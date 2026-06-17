@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
-      style={{ background: 'linear-gradient(150deg, #0b1e3a 0%, #102d52 35%, #143d6e 65%, #1a4d84 100%)' }}
+      style={{ background: 'linear-gradient(150deg, #1a3868 0%, #1f4a8a 35%, #2558a8 65%, #2d65c0 100%)' }}
     >
       {/* Background texture */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
@@ -87,7 +87,7 @@ export function Hero() {
 
             {/* Stat card — top left */}
             <div className="absolute -top-4 -left-6 text-white rounded-xl px-5 py-4 shadow-elevated"
-              style={{ background: 'linear-gradient(135deg, #1a4a8a 0%, #2568c0 100%)' }}>
+              style={{ background: 'linear-gradient(135deg, #2558a8 0%, #3578d8 100%)' }}>
               <p className="font-display text-3xl font-bold leading-none">25%</p>
               <p className="font-body text-xs opacity-85 mt-1">costos médicos</p>
               <p className="font-body text-xs opacity-85">evitables</p>
