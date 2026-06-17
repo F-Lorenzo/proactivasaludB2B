@@ -18,7 +18,7 @@ export function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full py-24 lg:py-0">
-        <div className="grid lg:grid-cols-[1fr_420px] gap-16 items-center min-h-[calc(100vh-4rem)]">
+        <div className="grid lg:grid-cols-[1fr_546px] gap-16 items-center min-h-[calc(100vh-4rem)]">
 
           {/* ── Text ── */}
           <div className="flex flex-col gap-8 animate-fade-up">
@@ -77,7 +77,7 @@ export function Hero() {
                 fill
                 className="object-cover"
                 priority
-                sizes="420px"
+                sizes="546px"
               />
               <div className="absolute inset-0 bg-navy/10" />
             </div>
