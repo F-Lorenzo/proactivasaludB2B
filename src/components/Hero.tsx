@@ -48,7 +48,7 @@ export function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
-      style={{ background: 'linear-gradient(150deg, #daeaf8 0%, #c8dff5 40%, #b8d4f0 70%, #a8c8eb 100%)' }}
+      style={{ background: 'linear-gradient(150deg, #1a3d7a 0%, #2050a0 40%, #2860b8 70%, #3070cc 100%)' }}
     >
       <style>{`
         @keyframes floatA {
@@ -95,13 +95,13 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-navy leading-[1.1] tracking-tight">
+            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
               El 60–80% del gasto<br />de su cartera es<br />
-              <span className="text-navy/50">prevenible.</span>
+              <span className="text-white/60">prevenible.</span>
             </h1>
 
-            <p className="font-body text-xl text-navy/70 max-w-[44ch] leading-relaxed">
-              Proactiva Salud trabaja <strong className="text-navy font-semibold">antes del problema</strong>, no después. Gestión activa de salud preventiva para la Generación Silver (+50/+60) de su empresa.
+            <p className="font-body text-xl text-white/70 max-w-[44ch] leading-relaxed">
+              Proactiva Salud trabaja <strong className="text-white font-semibold">antes del problema</strong>, no después. Gestión activa de salud preventiva para la Generación Silver (+50/+60) de su empresa.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
@@ -114,7 +114,7 @@ export function Hero() {
               </a>
               <a
                 href="#impacto"
-                className="inline-flex items-center justify-center font-body font-semibold text-base text-navy/75 px-8 py-4 rounded border border-navy/25 hover:border-navy/60 hover:text-navy transition-all duration-200"
+                className="inline-flex items-center justify-center font-body font-semibold text-base text-white/75 px-8 py-4 rounded border border-white/25 hover:border-white/60 hover:text-white transition-all duration-200"
               >
                 Ver el impacto
               </a>
@@ -122,7 +122,7 @@ export function Hero() {
 
             <div className="flex items-center gap-3 pt-2">
               <ShieldCheck size={18} className="text-green flex-shrink-0" aria-hidden="true" />
-              <p className="font-body text-sm text-navy/50">
+              <p className="font-body text-sm text-white/50">
                 Programa piloto en preparación · Primer cohorte Mayo 2026
               </p>
             </div>
