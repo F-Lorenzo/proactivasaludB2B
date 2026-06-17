@@ -25,7 +25,7 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-card'
-          : 'bg-navy/95 backdrop-blur-sm'
+          : 'bg-white/30 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -36,7 +36,7 @@ export function Header() {
             alt="ProActiva Salud"
             width={160}
             height={80}
-            className={`h-20 w-auto object-contain transition-all duration-300 ${scrolled ? 'brightness-0' : 'brightness-0 invert'}`}
+            className={`h-20 w-auto object-contain transition-all duration-300 ${scrolled ? 'brightness-0' : ''}`}
             priority
           />
         </Link>
@@ -48,7 +48,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={`font-body text-sm transition-colors ${
-                scrolled ? 'text-ink-mid hover:text-navy' : 'text-white/70 hover:text-white'
+                scrolled ? 'text-ink-mid hover:text-navy' : 'text-navy/70 hover:text-navy'
               }`}
             >
               {item.label}

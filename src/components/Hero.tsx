@@ -5,18 +5,15 @@ export function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
-      style={{ background: 'linear-gradient(150deg, #1a3868 0%, #1f4a8a 35%, #2558a8 65%, #2d65c0 100%)' }}
+      style={{ background: 'linear-gradient(150deg, #daeaf8 0%, #c8dff5 40%, #b8d4f0 70%, #a8c8eb 100%)' }}
     >
       {/* Background texture */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-15"
-          style={{ background: 'radial-gradient(ellipse at top right, oklch(0.52 0.13 215), transparent 60%)' }}
+        <div className="absolute top-0 right-0 w-1/2 h-full opacity-20"
+          style={{ background: 'radial-gradient(ellipse at top right, #80d85b, transparent 60%)' }}
         />
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-8"
-          style={{ background: 'oklch(0.45 0.18 240)', filter: 'blur(100px)' }}
-        />
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 rounded-full opacity-5"
-          style={{ background: 'oklch(0.65 0.15 205)', filter: 'blur(80px)' }}
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full opacity-10"
+          style={{ background: '#2d65c0', filter: 'blur(100px)' }}
         />
       </div>
 
@@ -34,14 +31,14 @@ export function Hero() {
             </div>
 
             {/* Headline */}
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
+            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-navy leading-[1.1] tracking-tight">
               El 60–80% del gasto<br />de su cartera es<br />
-              <span className="text-white/65">prevenible.</span>
+              <span className="text-navy/50">prevenible.</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="font-body text-xl text-white/65 max-w-[44ch] leading-relaxed">
-              Proactiva Salud trabaja <strong className="text-white/90 font-semibold">antes del problema</strong>, no después. Gestión activa de salud preventiva para la Generación Silver (+50/+60) de su empresa.
+            <p className="font-body text-xl text-navy/70 max-w-[44ch] leading-relaxed">
+              Proactiva Salud trabaja <strong className="text-navy font-semibold">antes del problema</strong>, no después. Gestión activa de salud preventiva para la Generación Silver (+50/+60) de su empresa.
             </p>
 
             {/* CTAs */}
@@ -55,7 +52,7 @@ export function Hero() {
               </a>
               <a
                 href="#impacto"
-                className="inline-flex items-center justify-center font-body font-semibold text-base text-white/75 px-8 py-4 rounded border border-white/20 hover:border-white/50 hover:text-white transition-all duration-200"
+                className="inline-flex items-center justify-center font-body font-semibold text-base text-navy/75 px-8 py-4 rounded border border-navy/25 hover:border-navy/60 hover:text-navy transition-all duration-200"
               >
                 Ver el impacto
               </a>
@@ -64,7 +61,7 @@ export function Hero() {
             {/* Trust signal */}
             <div className="flex items-center gap-3 pt-2">
               <ShieldCheck size={18} className="text-green flex-shrink-0" aria-hidden="true" />
-              <p className="font-body text-sm text-white/50">
+              <p className="font-body text-sm text-navy/50">
                 Programa piloto en preparación · Primer cohorte Mayo 2026
               </p>
             </div>
@@ -82,7 +79,7 @@ export function Hero() {
                 priority
                 sizes="420px"
               />
-              <div className="absolute inset-0 bg-navy/20" />
+              <div className="absolute inset-0 bg-navy/10" />
             </div>
 
             {/* Stat card — top left */}
