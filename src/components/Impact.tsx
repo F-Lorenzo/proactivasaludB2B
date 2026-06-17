@@ -1,6 +1,53 @@
+'use client'
+
 import Image from 'next/image'
 import { AnimateIn } from './ui/AnimateIn'
 import { IMPACT_STATS } from '@/lib/constants'
+
+function PulsingArrow() {
+  return (
+    <div className="relative flex flex-col items-center" style={{ width: 40, height: 64 }}>
+      <style>{`
+        @keyframes arrowPulse1 {
+          0%, 100% { opacity: 0.2; transform: translateY(0); }
+          33% { opacity: 1; transform: translateY(4px); }
+        }
+        @keyframes arrowPulse2 {
+          0%, 100% { opacity: 0.2; transform: translateY(0); }
+          33% { opacity: 0.2; transform: translateY(0); }
+          66% { opacity: 1; transform: translateY(4px); }
+        }
+        @keyframes arrowPulse3 {
+          0%, 66% { opacity: 0.2; transform: translateY(0); }
+          100% { opacity: 0.2; transform: translateY(0); }
+          83% { opacity: 1; transform: translateY(4px); }
+        }
+        .ap1 { animation: arrowPulse1 1.6s ease-in-out infinite; }
+        .ap2 { animation: arrowPulse2 1.6s ease-in-out infinite; }
+        .ap3 { animation: arrowPulse3 1.6s ease-in-out infinite; }
+      `}</style>
+      {[0, 1, 2].map((i) => (
+        <svg
+          key={i}
+          className={`ap${i + 1}`}
+          width="28" height="18"
+          viewBox="0 0 28 18"
+          fill="none"
+          aria-hidden="true"
+          style={{ marginBottom: i < 2 ? -4 : 0 }}
+        >
+          <polyline
+            points="4,4 14,14 24,4"
+            stroke="#80d85b"
+            strokeWidth="3.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      ))}
+    </div>
+  )
+}
 
 const colorMap = {
   teal: {
@@ -73,9 +120,13 @@ export function Impact() {
                   className={`${isMain ? '' : colors.bg} rounded-2xl p-8 lg:p-9 flex flex-col gap-4 h-full`}
                   style={isMain ? { background: 'linear-gradient(135deg, #1a4a8a 0%, #1e5ba6 50%, #2568c0 100%)' } : undefined}
                 >
-                  <p className={`font-display font-bold leading-none ${isMain ? 'text-6xl lg:text-7xl text-white' : `text-5xl lg:text-6xl ${colors.text}`}`}>
-                    {stat.value}
-                  </p>
+                  {stat.value === '↓' ? (
+                    <PulsingArrow />
+                  ) : (
+                    <p className={`font-display font-bold leading-none ${isMain ? 'text-6xl lg:text-7xl text-white' : `text-5xl lg:text-6xl ${colors.text}`}`}>
+                      {stat.value}
+                    </p>
+                  )}
                   <div>
                     <p className={`font-body font-semibold mb-2 ${isMain ? 'text-lg text-white/90' : `text-base ${colors.label}`}`}>
                       {stat.label}
