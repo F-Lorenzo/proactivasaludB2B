@@ -1,9 +1,10 @@
 'use client'
 
+import React from 'react'
 import Image from 'next/image'
 import { ArrowRight, ShieldCheck, TrendingDown, Users, BarChart3, HeartPulse } from 'lucide-react'
 
-const WIDGETS = [
+const WIDGETS: { icon: React.ElementType; label: string; value: string; sub: string; pos: string; delay: string; color: string; small?: boolean }[] = [
   {
     icon: TrendingDown,
     label: 'Reducción de costos',
@@ -33,12 +34,13 @@ const WIDGETS = [
   },
   {
     icon: BarChart3,
-    label: 'ROI medible',
-    value: '3×',
-    sub: 'retorno sobre inversión',
+    label: 'Diferencial',
+    value: 'Gestión activa,',
+    sub: 'no solo cobertura',
     pos: '-bottom-4 -right-4',
     delay: '0.2s',
     color: '#1a3868',
+    small: true,
   },
 ]
 
@@ -157,7 +159,7 @@ export function Hero() {
                     </div>
                     <p className="font-body text-[10px] font-semibold uppercase tracking-wide text-ink-soft">{w.label}</p>
                   </div>
-                  <p className="font-display font-bold text-xl text-navy leading-none mb-0.5">{w.value}</p>
+                  <p className={`text-navy leading-snug mb-0.5 ${w.small ? 'font-body font-semibold text-sm' : 'font-display font-bold text-xl leading-none'}`}>{w.value}</p>
                   <p className="font-body text-xs text-ink-soft leading-snug">{w.sub}</p>
                 </div>
               )
