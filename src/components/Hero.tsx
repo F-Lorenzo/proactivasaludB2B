@@ -1,5 +1,46 @@
+'use client'
+
 import Image from 'next/image'
-import { ArrowRight, ShieldCheck } from 'lucide-react'
+import { ArrowRight, ShieldCheck, TrendingDown, Users, BarChart3, HeartPulse } from 'lucide-react'
+
+const WIDGETS = [
+  {
+    icon: TrendingDown,
+    label: 'Reducción de costos',
+    value: '−30%',
+    sub: 'en siniestralidad crónica',
+    pos: 'top-6 -left-8',
+    delay: '0s',
+    color: '#80d85b',
+  },
+  {
+    icon: HeartPulse,
+    label: 'Prevención activa',
+    value: '5 pilares',
+    sub: 'de salud integral',
+    pos: 'top-1/3 -right-6',
+    delay: '0.4s',
+    color: '#2d65c0',
+  },
+  {
+    icon: Users,
+    label: 'Generación Silver',
+    value: '+50 / +60',
+    sub: 'tu cartera más costosa',
+    pos: 'bottom-1/3 -left-8',
+    delay: '0.8s',
+    color: '#2558a8',
+  },
+  {
+    icon: BarChart3,
+    label: 'ROI medible',
+    value: '3×',
+    sub: 'retorno sobre inversión',
+    pos: '-bottom-4 -right-4',
+    delay: '0.2s',
+    color: '#1a3868',
+  },
+]
 
 export function Hero() {
   return (
@@ -7,6 +48,29 @@ export function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
       style={{ background: 'linear-gradient(150deg, #daeaf8 0%, #c8dff5 40%, #b8d4f0 70%, #a8c8eb 100%)' }}
     >
+      <style>{`
+        @keyframes floatA {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+        @keyframes floatB {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+        }
+        @keyframes floatC {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        @keyframes floatD {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-7px); }
+        }
+        .widget-0 { animation: floatA 4s ease-in-out infinite; }
+        .widget-1 { animation: floatB 5s ease-in-out infinite; }
+        .widget-2 { animation: floatC 4.5s ease-in-out infinite; }
+        .widget-3 { animation: floatD 3.8s ease-in-out infinite; }
+      `}</style>
+
       {/* Background texture */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-20"
@@ -22,7 +86,6 @@ export function Hero() {
 
           {/* ── Text ── */}
           <div className="flex flex-col gap-8 animate-fade-up">
-            {/* Eyebrow */}
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
               <span className="font-body font-semibold text-xs tracking-widest uppercase text-teal">
@@ -30,18 +93,15 @@ export function Hero() {
               </span>
             </div>
 
-            {/* Headline */}
             <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-navy leading-[1.1] tracking-tight">
               El 60–80% del gasto<br />de su cartera es<br />
               <span className="text-navy/50">prevenible.</span>
             </h1>
 
-            {/* Subheadline */}
             <p className="font-body text-xl text-navy/70 max-w-[44ch] leading-relaxed">
               Proactiva Salud trabaja <strong className="text-navy font-semibold">antes del problema</strong>, no después. Gestión activa de salud preventiva para la Generación Silver (+50/+60) de su empresa.
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
                 href="#contacto"
@@ -58,7 +118,6 @@ export function Hero() {
               </a>
             </div>
 
-            {/* Trust signal */}
             <div className="flex items-center gap-3 pt-2">
               <ShieldCheck size={18} className="text-green flex-shrink-0" aria-hidden="true" />
               <p className="font-body text-sm text-navy/50">
@@ -82,13 +141,27 @@ export function Hero() {
               <div className="absolute inset-0 bg-navy/10" />
             </div>
 
-            {/* Differential card — bottom right */}
-            <div className="absolute -bottom-4 -right-4 bg-white rounded-xl px-4 py-3.5 shadow-elevated max-w-[180px]">
-              <p className="font-body text-xs text-ink-soft font-semibold uppercase tracking-wide mb-1">Diferencial</p>
-              <p className="font-body text-sm font-semibold text-navy leading-snug">
-                Gestión activa, no solo cobertura
-              </p>
-            </div>
+            {/* Floating widgets */}
+            {WIDGETS.map((w, i) => {
+              const Icon = w.icon
+              return (
+                <div
+                  key={i}
+                  className={`widget-${i} absolute ${w.pos} bg-white rounded-2xl px-4 py-3.5 shadow-elevated`}
+                  style={{ animationDelay: w.delay, minWidth: '160px' }}
+                >
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-6 h-6 rounded-md flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: `${w.color}18` }}>
+                      <Icon size={13} style={{ color: w.color }} aria-hidden="true" />
+                    </div>
+                    <p className="font-body text-[10px] font-semibold uppercase tracking-wide text-ink-soft">{w.label}</p>
+                  </div>
+                  <p className="font-display font-bold text-xl text-navy leading-none mb-0.5">{w.value}</p>
+                  <p className="font-body text-xs text-ink-soft leading-snug">{w.sub}</p>
+                </div>
+              )
+            })}
           </div>
 
         </div>
