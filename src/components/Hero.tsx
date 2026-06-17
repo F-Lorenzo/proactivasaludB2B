@@ -82,14 +82,6 @@ export function Hero() {
               <div className="absolute inset-0 bg-navy/10" />
             </div>
 
-            {/* Stat card — top left */}
-            <div className="absolute -top-4 -left-6 text-white rounded-xl px-5 py-4 shadow-elevated"
-              style={{ background: 'linear-gradient(135deg, #2558a8 0%, #3578d8 100%)' }}>
-              <p className="font-display text-3xl font-bold leading-none">25%</p>
-              <p className="font-body text-xs opacity-85 mt-1">costos médicos</p>
-              <p className="font-body text-xs opacity-85">evitables</p>
-            </div>
-
             {/* Differential card — bottom right */}
             <div className="absolute -bottom-4 -right-4 bg-white rounded-xl px-4 py-3.5 shadow-elevated max-w-[180px]">
               <p className="font-body text-xs text-ink-soft font-semibold uppercase tracking-wide mb-1">Diferencial</p>
