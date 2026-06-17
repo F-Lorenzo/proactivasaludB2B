@@ -168,6 +168,22 @@ export function Hero() {
 
         </div>
       </div>
+
+      {/* Geometric transition */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" aria-hidden="true">
+        {/* Layer 3 — darkest, furthest back */}
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full block" style={{ height: 120, display: 'block' }}>
+          <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,20 1440,80 L1440,120 L0,120 Z" fill="rgba(26,61,122,0.35)" />
+        </svg>
+        {/* Layer 2 — mid */}
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" className="w-full block" style={{ height: 90, marginTop: -70, display: 'block' }}>
+          <path d="M0,30 C360,90 720,0 1080,50 C1260,75 1380,20 1440,40 L1440,90 L0,90 Z" fill="rgba(32,80,160,0.45)" />
+        </svg>
+        {/* Layer 1 — front, transitions to gradient next section */}
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block" style={{ height: 80, marginTop: -55, display: 'block' }}>
+          <path d="M0,40 C180,80 420,10 720,45 C1020,80 1260,15 1440,50 L1440,80 L0,80 Z" fill="rgba(58,106,191,0.6)" />
+        </svg>
+      </div>
     </section>
   )
 }
