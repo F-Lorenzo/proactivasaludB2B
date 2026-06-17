@@ -24,7 +24,7 @@ export const PAIN_POINTS = [
 
 export const IMPACT_STATS = [
   {
-    value: '15–25%',
+    value: '5%–12%',
     label: 'costos médicos evitables',
     description: 'Reducción proyectada en gastos asistenciales con gestión preventiva activa',
     color: 'green',
