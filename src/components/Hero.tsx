@@ -72,8 +72,8 @@ export function Hero() {
             {/* Main image */}
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=85"
-                alt="Profesional de salud con tableta atendiendo paciente mayor"
+                src="/hero.jpg"
+                alt="Diagrama financiero B2B de salud preventiva"
                 fill
                 className="object-cover"
                 priority
