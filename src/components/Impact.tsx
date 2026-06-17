@@ -53,14 +53,14 @@ const colorMap = {
   teal: {
     bg: 'bg-navy',
     text: 'text-teal',
-    label: 'text-white/80',
-    desc: 'text-white/55',
+    label: 'text-white font-bold',
+    desc: 'text-white/80',
   },
   navy: {
     bg: 'bg-navy-mid',
     text: 'text-white',
-    label: 'text-white/70',
-    desc: 'text-white/50',
+    label: 'text-white font-bold',
+    desc: 'text-white/80',
   },
 } as const
 
@@ -123,15 +123,15 @@ export function Impact() {
                   {stat.value === '↓' ? (
                     <PulsingArrow />
                   ) : (
-                    <p className={`font-display font-bold leading-none ${isMain ? 'text-6xl lg:text-7xl text-white' : `text-5xl lg:text-6xl ${colors.text}`}`}>
+                    <p className={`font-display font-bold leading-none ${isMain ? 'text-7xl lg:text-8xl text-white' : `text-6xl lg:text-7xl ${colors.text}`}`}>
                       {stat.value}
                     </p>
                   )}
                   <div>
-                    <p className={`font-body font-semibold mb-2 ${isMain ? 'text-lg text-white/90' : `text-base ${colors.label}`}`}>
+                    <p className={`font-body mb-2 ${isMain ? 'text-xl font-bold text-white' : `text-lg ${colors.label}`}`}>
                       {stat.label}
                     </p>
-                    <p className={`font-body text-sm leading-relaxed ${isMain ? 'text-white/70' : colors.desc}`}>
+                    <p className={`font-body text-base leading-relaxed ${isMain ? 'text-white/80' : colors.desc}`}>
                       {stat.description}
                     </p>
                   </div>
