@@ -131,7 +131,7 @@ export function Hero() {
           {/* ── Visual ── */}
           <div className="relative hidden lg:block">
             {/* Main image */}
-            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden">
+            <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: 682 }}>
               <Image
                 src="/hero.jpg"
                 alt="Diagrama financiero B2B de salud preventiva"
