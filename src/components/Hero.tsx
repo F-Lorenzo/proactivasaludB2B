@@ -260,18 +260,12 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Geometric V transition */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" aria-hidden="true">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: 100, display: 'block' }}>
-          <path d="M0,0 L1000,100 L1440,18 L1440,100 L0,100 Z" fill="rgba(20,50,110,0.4)" />
-        </svg>
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: 100, display: 'block', marginTop: -100 }}>
-          <path d="M0,0 L980,95 L1440,10 L1440,100 L0,100 Z" fill="rgba(45,101,192,0.55)" />
-        </svg>
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style={{ width: '100%', height: 100, display: 'block', marginTop: -100 }}>
-          <path d="M0,0 L960,88 L1440,2 L1440,100 L0,100 Z" fill="rgba(58,106,191,0.65)" />
-        </svg>
-      </div>
+      {/* Soft bottom fade — blends into the section below */}
+      <div
+        className="absolute bottom-0 left-0 right-0 pointer-events-none h-48"
+        aria-hidden="true"
+        style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(26,61,122,0.15) 40%, rgba(58,106,191,0.25) 100%)' }}
+      />
     </section>
   )
 }
