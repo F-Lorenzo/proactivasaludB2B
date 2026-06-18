@@ -244,12 +244,6 @@ export function Hero() {
                 Ver el impacto
               </a>
             </div>
-            <div className="flex items-center gap-3 pt-2">
-              <ShieldCheck size={18} className="text-green flex-shrink-0" aria-hidden="true" />
-              <p className="font-body text-sm text-white/50">
-                Programa piloto en preparación · Primer cohorte Mayo 2026
-              </p>
-            </div>
           </div>
 
           {/* Network diagram */}
