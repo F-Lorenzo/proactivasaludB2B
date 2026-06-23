@@ -76,8 +76,8 @@ export function Impact() {
         <AnimateIn delay={100}>
           <div className="relative w-full h-56 lg:h-72 rounded-3xl overflow-hidden mb-10 lg:mb-12">
             <Image
-              src="https://images.unsplash.com/photo-1581579438747-1dc8d17bbce4?auto=format&fit=crop&w=1400&q=85"
-              alt="Adultos mayores activos y saludables gracias a gestión preventiva"
+              src="/banner-impact.jpg"
+              alt="Adulta mayor caminando, activa y saludable gracias a gestión preventiva"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1280px) 100vw, 1280px"
