@@ -44,14 +44,10 @@ export function Services() {
         <AnimateIn>
           <div className="bg-navy rounded-3xl overflow-hidden mb-6 grid lg:grid-cols-[1fr_340px]">
             <div className="p-8 lg:p-12">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="font-display text-sm font-bold text-teal">{featured.number}</span>
-                <div className="h-px flex-1 max-w-[40px] bg-teal/30" aria-hidden="true" />
-              </div>
               <h3 className="font-display text-2xl lg:text-3xl text-white font-bold mb-4 leading-tight">
                 {featured.title}
               </h3>
-              <p className="font-body text-white/70 text-base leading-relaxed mb-6 max-w-[48ch]">
+              <p className="font-body text-white text-base leading-relaxed mb-6 max-w-[48ch]">
                 {featured.description}
               </p>
 
@@ -59,7 +55,7 @@ export function Services() {
               <div className="inline-flex items-center gap-2.5 rounded-lg px-4 py-2.5 mb-8"
                 style={{ background: 'rgba(37, 104, 192, 0.2)' }}>
                 <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#60a5fa' }} aria-hidden="true" />
-                <p className="font-body text-sm font-semibold" style={{ color: '#93c5fd' }}>
+                <p className="font-body text-sm font-semibold text-white">
                   {featured.b2bValue}
                 </p>
               </div>
@@ -68,7 +64,7 @@ export function Services() {
                 {featured.includes.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CircleCheck size={15} className="text-teal flex-shrink-0 mt-0.5" aria-hidden="true" />
-                    <span className="font-body text-sm text-white/75">{item}</span>
+                    <span className="font-body text-sm text-white">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -77,7 +73,7 @@ export function Services() {
             {/* Photo */}
             <div className="relative hidden lg:block min-h-[360px]">
               <Image
-                src="https://images.unsplash.com/photo-1559839914-17aae19cec71?auto=format&fit=crop&w=600&q=85"
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=85"
                 alt="Adulto mayor de 50 años en consulta de nutrición saludable con profesional"
                 fill
                 className="object-cover"
