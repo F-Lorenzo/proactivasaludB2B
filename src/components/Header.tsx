@@ -36,7 +36,7 @@ export function Header() {
             alt="ProActiva Salud"
             width={160}
             height={80}
-            className={`h-20 w-auto object-contain transition-all duration-300 ${scrolled ? 'brightness-0' : ''}`}
+            className="h-20 w-auto object-contain"
             priority
           />
         </Link>
