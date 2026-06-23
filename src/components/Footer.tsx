@@ -49,7 +49,7 @@ export function Footer() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="font-body text-sm text-white/50 hover:text-white transition-colors"
+                      className="font-body text-sm text-white hover:text-teal transition-colors"
                     >
                       {link.label}
                     </a>
@@ -67,13 +67,13 @@ export function Footer() {
             <div className="space-y-4">
               <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-3 group">
                 <Phone size={14} className="text-teal/60 flex-shrink-0 group-hover:text-teal transition-colors" aria-hidden="true" />
-                <span className="font-body text-sm text-white/50 group-hover:text-white/80 transition-colors">
+                <span className="font-body text-sm text-white group-hover:text-teal transition-colors">
                   {CONTACT_INFO.phone}
                 </span>
               </a>
               <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-3 group">
                 <Mail size={14} className="text-teal/60 flex-shrink-0 group-hover:text-teal transition-colors" aria-hidden="true" />
-                <span className="font-body text-sm text-white/50 group-hover:text-white/80 transition-colors">
+                <span className="font-body text-sm text-white group-hover:text-teal transition-colors">
                   {CONTACT_INFO.email}
                 </span>
               </a>
@@ -84,7 +84,7 @@ export function Footer() {
                 className="flex items-center gap-3 group"
               >
                 <MessageCircle size={14} className="text-teal/60 flex-shrink-0 group-hover:text-teal transition-colors" aria-hidden="true" />
-                <span className="font-body text-sm text-white/50 group-hover:text-white/80 transition-colors">
+                <span className="font-body text-sm text-white group-hover:text-teal transition-colors">
                   {CONTACT_INFO.whatsapp}
                 </span>
               </a>
