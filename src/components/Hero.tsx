@@ -227,11 +227,11 @@ export function Hero() {
               </span>
             </div>
             <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
-              El 60–80% del gasto<br />de su cartera es<br />
-              <span className="text-white/60">prevenible.</span>
+              Más del 40% de los ingresos totales<br />de las empresas de salud, son<br />
+              <span className="text-white/60">absorbidos por la población +50.</span>
             </h1>
-            <p className="font-body text-xl text-white/70 max-w-[44ch] leading-relaxed">
-              Proactiva Salud trabaja <strong className="text-white font-semibold">antes del problema</strong>, no después. Gestión activa de salud preventiva para la Generación Silver (+50/+60) de su empresa.
+            <p className="font-body text-xl text-white/70 max-w-[50ch] leading-relaxed">
+              Proactiva Salud combina <strong className="text-white font-semibold">tecnología, seguimiento humano y programas de bienestar integral</strong>, que mejoran la adherencia, ordenan la demanda asistencial y generan impacto real económico sobre el gasto médico anual.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a href="#contacto"
