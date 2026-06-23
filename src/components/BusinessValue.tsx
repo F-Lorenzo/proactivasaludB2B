@@ -53,14 +53,14 @@ export function BusinessValue() {
             return (
               <AnimateIn key={item.title} delay={(i + 1) * 80}>
                 <div className="bg-white rounded-2xl p-6 lg:p-7 flex flex-col gap-5 h-full shadow-card">
-                  <div className="w-10 h-10 rounded-xl bg-navy/5 flex items-center justify-center">
-                    {Icon && <Icon size={18} className="text-navy" aria-hidden="true" />}
+                  <div className="w-10 h-10 rounded-xl bg-navy/25 flex items-center justify-center">
+                    {Icon && <Icon size={18} className="text-navy" strokeWidth={2.5} aria-hidden="true" />}
                   </div>
                   <div>
                     <h3 className="font-display text-base font-bold text-navy mb-2 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="font-body text-sm text-ink-mid leading-relaxed">
+                    <p className="font-body text-sm font-semibold text-navy leading-relaxed">
                       {item.description}
                     </p>
                   </div>
