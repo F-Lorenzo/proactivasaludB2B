@@ -29,9 +29,9 @@ export function Footer() {
                 className="h-20 w-auto object-contain brightness-0 invert"
               />
             </Link>
-            <p className="font-body text-sm text-white/45 leading-relaxed mb-6">
-              Plataforma de salud preventiva integral para la Generación Silver.
-              Dirigida a prepagas, aseguradoras y empresas de salud.
+            <p className="font-body text-sm text-white leading-relaxed mb-6">
+              Plataforma de bienestar y acompañamiento humano, para personas pertenecientes
+              a la Generación Silver, integradas en aseguradoras y empresas de salud.
             </p>
             <p className="font-body text-xs text-white/30">
               Piloto de lanzamiento · Primera cohorte Mayo 2026
