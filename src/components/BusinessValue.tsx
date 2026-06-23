@@ -22,27 +22,21 @@ export function BusinessValue() {
         {/* Header */}
         <AnimateIn>
           <div className="max-w-2xl mb-16 lg:mb-20">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-10 bg-teal" aria-hidden="true" />
-              <span className="font-body font-bold text-sm tracking-widest uppercase text-navy">
-                Por qué importa
-              </span>
-            </div>
             <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight">
-              El valor para su empresa,<br />
-              más allá de la salud.
+              Un programa de Bienestar Integral,<br />
+              con impacto económico medible.
             </h2>
           </div>
         </AnimateIn>
 
         {/* Primary value — full width */}
         <AnimateIn>
-          <div className="bg-teal rounded-3xl p-8 lg:p-12 mb-6 grid lg:grid-cols-[auto_1fr] gap-8 items-start">
-            <div className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center flex-shrink-0">
-              {PrimaryIcon && <PrimaryIcon size={28} className="text-white" aria-hidden="true" />}
+          <div className="bg-navy rounded-3xl p-8 lg:p-12 mb-6 grid lg:grid-cols-[auto_1fr] gap-8 items-start">
+            <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0">
+              {PrimaryIcon && <PrimaryIcon size={28} className="text-teal" aria-hidden="true" />}
             </div>
             <div>
-              <h3 className="font-display text-2xl lg:text-3xl text-white font-bold mb-4 leading-tight">
+              <h3 className="font-display text-2xl lg:text-3xl text-teal font-bold mb-4 leading-tight">
                 {primary.title}
               </h3>
               <p className="font-body text-white/75 text-base leading-relaxed max-w-[64ch]">
