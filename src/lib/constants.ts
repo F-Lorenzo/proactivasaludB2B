@@ -8,8 +8,8 @@ export const PAIN_POINTS = [
   },
   {
     icon: 'RefreshCcw',
-    stat: 'Reactivo',
-    title: 'el modelo de atención actual',
+    stat: 'Modelo Reactivo',
+    title: 'sistema de atención actual',
     description:
       'La mayoría de las empresas de salud actúa cuando el beneficiario ya se enfermó. La prevención sistemática sigue siendo la excepción, no la regla.',
   },
