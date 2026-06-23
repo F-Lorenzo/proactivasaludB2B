@@ -5,8 +5,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const NAV = [
-  { label: 'El problema', href: '#problema' },
-  { label: 'La solución', href: '#solucion' },
+  { label: 'Inicio', href: '#main' },
+  { label: 'Costo asistencial', href: '#problema' },
+  { label: 'Modelo preventivo', href: '#solucion' },
   { label: 'Impacto económico', href: '#impacto' },
   { label: 'Servicios', href: '#servicios' },
 ]
@@ -42,14 +43,12 @@ export function Header() {
         </Link>
 
         {/* Nav */}
-        <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+        <nav className="hidden lg:flex items-center gap-6" aria-label="Navegación principal">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className={`font-body text-sm transition-colors ${
-                'text-ink-mid hover:text-navy'
-              }`}
+              className="font-body text-base font-bold text-navy hover:text-teal transition-colors"
             >
               {item.label}
             </a>
