@@ -14,7 +14,7 @@ export function Solution() {
             <AnimateIn>
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px w-10 bg-teal" aria-hidden="true" />
-                <span className="font-body font-semibold text-xs tracking-widest uppercase text-teal">
+                <span className="font-body font-bold text-sm tracking-widest uppercase text-navy">
                   La solución
                 </span>
               </div>
@@ -54,7 +54,7 @@ export function Solution() {
           {/* Right: Program overview */}
           <AnimateIn delay={200}>
             <div className="bg-navy rounded-3xl p-8 lg:p-10">
-              <p className="font-body font-semibold text-xs tracking-widest uppercase text-teal mb-6">
+              <p className="font-body font-bold text-sm tracking-widest uppercase text-teal mb-6">
                 Cómo funciona
               </p>
 

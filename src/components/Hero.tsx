@@ -222,7 +222,7 @@ export function Hero() {
           <div className="flex flex-col gap-8 animate-fade-up">
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
-              <span className="font-body font-semibold text-xs tracking-widest uppercase text-teal">
+              <span className="font-body font-bold text-sm tracking-widest uppercase text-teal">
                 Plataforma Digital de Salud Preventiva
               </span>
             </div>
