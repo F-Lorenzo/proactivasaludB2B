@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MapPin } from 'lucide-react'
+import { Phone, Mail, MessageCircle } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
 const NAV_LINKS = [
@@ -77,12 +77,17 @@ export function Footer() {
                   {CONTACT_INFO.email}
                 </span>
               </a>
-              <div className="flex items-start gap-3">
-                <MapPin size={14} className="text-teal/60 flex-shrink-0 mt-0.5" aria-hidden="true" />
-                <span className="font-body text-sm text-white/50">
-                  {CONTACT_INFO.address}
+              <a
+                href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/[^0-9]/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 group"
+              >
+                <MessageCircle size={14} className="text-teal/60 flex-shrink-0 group-hover:text-teal transition-colors" aria-hidden="true" />
+                <span className="font-body text-sm text-white/50 group-hover:text-white/80 transition-colors">
+                  {CONTACT_INFO.whatsapp}
                 </span>
-              </div>
+              </a>
             </div>
           </div>
 

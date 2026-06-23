@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react'
+import { ArrowRight, Phone, Mail, MessageCircle } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
 type FormState = {
@@ -55,12 +55,13 @@ export function ContactSection() {
               </span>
             </div>
             <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-white leading-tight tracking-tight mb-6">
-              Hablemos de su<br />
-              cartera.
+              Menos gasto reactivo,<br />
+              más prevención cuantificable.
             </h2>
-            <p className="font-body text-white/60 text-base leading-relaxed mb-12 max-w-[44ch]">
-              Si gestiona una prepaga, aseguradora o empresa de salud con segmento Silver,
-              le mostramos cómo Proactiva Salud encaja en su operación. Sin compromiso.
+            <p className="font-body text-white/60 text-base leading-relaxed mb-12 max-w-[48ch]">
+              Si gestiona una Empresa que brinda servicios de salud a la población Silver +50,
+              descubra cómo Proactiva Salud puede integrarse a su operación para reducir presión
+              asistencial, mejorar adherencia y generar impacto económico comprobable.
             </p>
 
             {/* Contact details */}
@@ -91,15 +92,20 @@ export function ContactSection() {
                 </div>
               </a>
 
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin size={16} className="text-teal" aria-hidden="true" />
+              <a
+                href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/[^0-9]/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center flex-shrink-0 group-hover:bg-teal/20 transition-colors">
+                  <MessageCircle size={16} className="text-teal" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-body text-xs text-white/40 uppercase tracking-wide mb-0.5">Dirección</p>
-                  <p className="font-body text-base text-white font-semibold">{CONTACT_INFO.address}</p>
+                  <p className="font-body text-xs text-white/40 uppercase tracking-wide mb-0.5">WhatsApp</p>
+                  <p className="font-body text-base text-white font-semibold">{CONTACT_INFO.whatsapp}</p>
                 </div>
-              </div>
+              </a>
             </div>
 
             {/* Company */}
