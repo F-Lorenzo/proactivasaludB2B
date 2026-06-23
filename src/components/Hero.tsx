@@ -12,7 +12,7 @@ const NODES = [
     x: 60,  y: 70,
     icon: TrendingDown,
     label: 'REDUCCIÓN DE COSTOS',
-    value: '−30%',
+    value: '−12%',
     sub: 'siniestralidad crónica',
     color: '#80d85b',
     delay: '0s',
