@@ -23,8 +23,8 @@ export function PainPoints() {
               </span>
             </div>
             <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight">
-              Su cartera tiene un problema<br />
-              <span className="text-white">que empeora cada año.</span>
+              El mayor impacto económico<br />
+              <span className="text-white">está en la cronicidad.</span>
             </h2>
           </div>
         </AnimateIn>
