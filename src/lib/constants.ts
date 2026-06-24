@@ -104,11 +104,11 @@ export const SERVICES = [
   },
   {
     number: '05',
-    title: 'Coaching de Longevidad',
+    title: 'Charlas Virtuales de Coaching Ontológico',
     icon: 'Users',
     b2bValue: 'Aumenta adherencia al programa y satisfacción del afiliado',
     description:
-      'Charlas virtuales grupales de coaching ontológico y transaccional, segmentadas por edad.',
+      'Redefiní tu propósito en esta etapa para estar en plenitud total.',
     includes: [
       'Charlas mensuales por grupo etario',
       'Desarrollo personal y herramientas de bienestar',
