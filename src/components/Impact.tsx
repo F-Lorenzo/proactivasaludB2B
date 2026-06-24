@@ -79,7 +79,7 @@ export function Impact() {
               src="/banner-impact.jpg"
               alt="Adulta mayor caminando, activa y saludable gracias a gestión preventiva"
               fill
-              className="object-cover object-center"
+              className="object-cover object-top"
               sizes="(max-width: 1280px) 100vw, 1280px"
             />
             <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(14,36,73,0.75) 0%, rgba(14,36,73,0.35) 60%, transparent 100%)' }} />
