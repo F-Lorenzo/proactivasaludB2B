@@ -73,8 +73,8 @@ export function Services() {
             {/* Photo */}
             <div className="relative hidden lg:block min-h-[360px]">
               <Image
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=85"
-                alt="Adulto mayor de 50 años en consulta de nutrición saludable con profesional"
+                src="/service-nutrition.jpg"
+                alt="Ensalada orgánica de palta y espinaca, alimentación saludable"
                 fill
                 className="object-cover"
                 sizes="340px"
