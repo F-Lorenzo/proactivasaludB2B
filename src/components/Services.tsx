@@ -118,8 +118,8 @@ export function Services() {
                   {/* B2B value */}
                   <div className="mt-auto pt-4 border-t border-navy/10">
                     <div className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0 mt-1.5" aria-hidden="true" />
-                      <p className="font-body text-xs font-semibold text-teal leading-snug">
+                      <div className="w-1.5 h-1.5 rounded-full bg-navy flex-shrink-0 mt-1.5" aria-hidden="true" />
+                      <p className="font-body text-xs font-semibold text-navy leading-snug">
                         {service.b2bValue}
                       </p>
                     </div>
