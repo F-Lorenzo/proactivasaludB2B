@@ -96,7 +96,7 @@ export function Services() {
                     src={serviceImages[service.number]}
                     alt={serviceImageAlts[service.number]}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${service.number === '02' ? 'object-top' : 'object-center'}`}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-navy/25" />
