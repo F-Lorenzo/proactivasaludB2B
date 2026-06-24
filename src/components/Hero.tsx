@@ -230,7 +230,7 @@ export function Hero() {
               Más del 40% de los ingresos totales<br />de las empresas de salud, son<br />
               <span className="text-white/60">absorbidos por la población +50.</span>
             </h1>
-            <p className="font-body text-xl text-white/70 max-w-[50ch] leading-relaxed">
+            <p className="font-body text-base text-white/70 max-w-[50ch] leading-relaxed">
               Proactiva Salud combina <strong className="text-white font-semibold">tecnología, seguimiento humano y programas de bienestar integral</strong>, que mejoran la adherencia, ordenan la demanda asistencial y generan impacto real económico sobre el gasto médico anual.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
