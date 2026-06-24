@@ -56,7 +56,7 @@ export const SERVICES = [
     icon: 'Utensils',
     b2bValue: 'Reduce hospitalización por diabetes, hipertensión y obesidad',
     description:
-      'Plan de alimentación personalizado para afiliados mayores de 50. Seguimiento continuo vía teleconsulta.',
+      'Plan de alimentación personalizado para personas mayores de 50. Seguimiento continuo vía teleconsulta.',
     includes: [
       '2 teleconsultas mensuales con nutricionista',
       'Plan de alimentación +50/+60 personalizado',
