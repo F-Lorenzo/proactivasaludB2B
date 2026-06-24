@@ -97,11 +97,6 @@ export function Solution() {
                 ))}
               </div>
 
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <p className="font-body text-sm text-white/60">
-                  Piloto de lanzamiento · Primer cohorte <strong className="text-white/85 font-semibold">Mayo 2026</strong>
-                </p>
-              </div>
             </div>
           </AnimateIn>
 
