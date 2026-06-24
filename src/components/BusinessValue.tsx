@@ -21,10 +21,10 @@ export function BusinessValue() {
 
         {/* Header */}
         <AnimateIn>
-          <div className="max-w-2xl mb-16 lg:mb-20">
-            <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight">
-              Un programa de Bienestar Integral,<br />
-              con impacto económico medible.
+          <div className="max-w-4xl mb-16 lg:mb-20">
+            <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight whitespace-normal">
+              <span className="block">Un programa de Bienestar Integral,</span>
+              <span className="block">con impacto económico medible.</span>
             </h2>
           </div>
         </AnimateIn>
