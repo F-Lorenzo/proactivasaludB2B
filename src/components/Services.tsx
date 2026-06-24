@@ -100,9 +100,6 @@ export function Services() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-navy/25" />
-                  <span className="absolute top-3 left-3 font-display text-sm font-bold text-white bg-navy/50 backdrop-blur-sm px-2.5 py-1 rounded-md">
-                    {service.number}
-                  </span>
                 </div>
 
                 <div className="p-6 flex flex-col gap-4 flex-1">
