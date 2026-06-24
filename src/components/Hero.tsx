@@ -226,7 +226,7 @@ export function Hero() {
                 Plataforma Digital de Salud Preventiva
               </span>
             </div>
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] tracking-tight">
+            <h1 className="font-display text-2xl lg:text-3xl xl:text-4xl text-white leading-[1.15] tracking-tight">
               Más del 40% de los ingresos totales<br />de las empresas de salud, son<br />
               <span className="text-white/60">absorbidos por la población +50.</span>
             </h1>
