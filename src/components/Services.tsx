@@ -7,7 +7,7 @@ const serviceImages: Record<string, string> = {
   '02': '/service-02.jpg',
   '03': '/service-03.jpg',
   '04': '/service-04.jpg',
-  '05': 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80',
+  '05': '/service-05.jpg',
 }
 
 const serviceImageAlts: Record<string, string> = {
