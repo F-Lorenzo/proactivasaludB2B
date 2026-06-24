@@ -4,9 +4,9 @@ import { AnimateIn } from './ui/AnimateIn'
 import { SERVICES } from '@/lib/constants'
 
 const serviceImages: Record<string, string> = {
-  '02': 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80',
-  '03': 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80',
-  '04': 'https://images.unsplash.com/photo-1590779033100-9f60a05a013d?auto=format&fit=crop&w=400&q=80',
+  '02': '/service-02.jpg',
+  '03': '/service-03.jpg',
+  '04': '/service-04.jpg',
   '05': 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80',
 }
 
