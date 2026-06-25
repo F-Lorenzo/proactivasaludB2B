@@ -33,9 +33,6 @@ export function Footer() {
               Plataforma de bienestar y acompañamiento humano, para personas pertenecientes
               a la Generación Silver, integradas en aseguradoras y empresas de salud.
             </p>
-            <p className="font-body text-xs text-white/30">
-              Piloto de lanzamiento · Primera cohorte Mayo 2026
-            </p>
           </div>
 
           {/* Navigation */}
