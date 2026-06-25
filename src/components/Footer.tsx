@@ -4,11 +4,11 @@ import { Phone, Mail, MessageCircle } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
 const NAV_LINKS = [
-  { label: 'El problema', href: '#problema' },
-  { label: 'La solución', href: '#solucion' },
+  { label: 'Inicio', href: '#main' },
+  { label: 'Costo asistencial', href: '#problema' },
+  { label: 'Modelo preventivo', href: '#solucion' },
   { label: 'Impacto económico', href: '#impacto' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Contacto', href: '#contacto' },
 ]
 
 export function Footer() {
