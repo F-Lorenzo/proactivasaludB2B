@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const NAV = [
+  { label: 'Página principal', href: 'https://www.proactivasalud.com', external: true },
   { label: 'Inicio', href: '#main' },
   { label: 'Costo asistencial', href: '#problema' },
   { label: 'Modelo preventivo', href: '#solucion' },
@@ -48,6 +49,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
+              {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className="font-body text-base font-bold text-navy hover:text-teal transition-colors"
             >
               {item.label}
