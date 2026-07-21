@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { ArrowRight, Phone, Mail, MessageCircle } from 'lucide-react'
+import { ArrowRight, Mail, MessageCircle } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
 type FormState = {
@@ -66,19 +66,6 @@ export function ContactSection() {
 
             {/* Contact details */}
             <div className="space-y-5">
-              <a
-                href={`tel:${CONTACT_INFO.phone}`}
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center flex-shrink-0 group-hover:bg-teal/20 transition-colors">
-                  <Phone size={16} className="text-teal" aria-hidden="true" />
-                </div>
-                <div>
-                  <p className="font-body text-xs text-white/40 uppercase tracking-wide mb-0.5">Teléfono</p>
-                  <p className="font-body text-base text-white font-semibold">{CONTACT_INFO.phone}</p>
-                </div>
-              </a>
-
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
                 className="flex items-center gap-4 group"

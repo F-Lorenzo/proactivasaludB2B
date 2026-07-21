@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MessageCircle } from 'lucide-react'
+import { Mail, MessageCircle } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
 
 const NAV_LINKS = [
@@ -62,12 +62,6 @@ export function Footer() {
               Contacto
             </p>
             <div className="space-y-4">
-              <a href={`tel:${CONTACT_INFO.phone}`} className="flex items-center gap-3 group">
-                <Phone size={14} className="text-teal/60 flex-shrink-0 group-hover:text-teal transition-colors" aria-hidden="true" />
-                <span className="font-body text-sm text-white group-hover:text-teal transition-colors">
-                  {CONTACT_INFO.phone}
-                </span>
-              </a>
               <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-3 group">
                 <Mail size={14} className="text-teal/60 flex-shrink-0 group-hover:text-teal transition-colors" aria-hidden="true" />
                 <span className="font-body text-sm text-white group-hover:text-teal transition-colors">

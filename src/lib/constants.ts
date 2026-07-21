@@ -170,7 +170,6 @@ export const DIFFERENTIALS = [
 ]
 
 export const CONTACT_INFO = {
-  phone: '+54 11 5263-0125',
   whatsapp: '+54 11 7678-1555',
   email: 'info@proactivasalud.com',
   company: 'ProactivaSalud — gestión integral de salud',
