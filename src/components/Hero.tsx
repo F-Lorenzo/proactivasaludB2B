@@ -227,7 +227,7 @@ export function Hero() {
               </span>
             </div>
             <h1 className="font-display text-2xl lg:text-3xl xl:text-4xl text-white leading-[1.15] tracking-tight">
-              Más del 40% de los ingresos totales<br />de las empresas de salud, son<br />
+              Más del 45% de los ingresos totales<br />de las empresas de salud, son<br />
               <span className="text-white/60">absorbidos por la población +50.</span>
             </h1>
             <p className="font-body text-base text-white/70 max-w-[50ch] leading-relaxed">
