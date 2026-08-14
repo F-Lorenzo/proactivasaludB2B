@@ -1,7 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import { CircleCheck } from 'lucide-react'
 import { AnimateIn } from './ui/AnimateIn'
-import { SERVICES } from '@/lib/constants'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const serviceImages: Record<string, string> = {
   '02': '/service-02.jpg',
@@ -10,15 +12,9 @@ const serviceImages: Record<string, string> = {
   '05': '/service-05.jpg',
 }
 
-const serviceImageAlts: Record<string, string> = {
-  '02': 'Adulto mayor de 50 años realizando actividad física supervisada',
-  '03': 'Persona mayor en sesión de bienestar psicológico',
-  '04': 'Adulto mayor en teleconsulta médica desde su hogar',
-  '05': 'Grupo de adultos mayores en taller de coaching de longevidad',
-}
-
 export function Services() {
-  const [featured, ...rest] = SERVICES
+  const { t } = useLanguage()
+  const [featured, ...rest] = t.services.items
 
   return (
     <section id="servicios" className="bg-surface py-24 lg:py-32">
@@ -30,12 +26,12 @@ export function Services() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
               <span className="font-body font-bold text-sm tracking-widest uppercase text-navy">
-                Servicios
+                {t.services.eyebrow}
               </span>
             </div>
             <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight">
-              Cinco pilares que trabajan<br />
-              en conjunto.
+              {t.services.headline1}<br />
+              {t.services.headline2}
             </h2>
           </div>
         </AnimateIn>
@@ -74,7 +70,7 @@ export function Services() {
             <div className="relative hidden lg:block min-h-[360px]">
               <Image
                 src="/service-nutrition.jpg"
-                alt="Ensalada orgánica de palta y espinaca, alimentación saludable"
+                alt={t.services.featuredImageAlt}
                 fill
                 className="object-cover"
                 sizes="340px"
@@ -94,7 +90,7 @@ export function Services() {
                 <div className="relative h-44 flex-shrink-0">
                   <Image
                     src={serviceImages[service.number]}
-                    alt={serviceImageAlts[service.number]}
+                    alt={service.imageAlt}
                     fill
                     className={`object-cover ${service.number === '02' ? 'object-top' : 'object-center'}`}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

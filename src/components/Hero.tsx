@@ -2,64 +2,26 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { ArrowRight, ShieldCheck, TrendingDown, Users, BarChart3, HeartPulse, Activity } from 'lucide-react'
+import { ArrowRight, TrendingDown, Users, BarChart3, HeartPulse } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
+import type { Dictionary } from '@/lib/i18n'
 
-// Network nodes: center + 4 peripheral
+// Network nodes: center + 4 peripheral (positions/colors/icons are language-independent)
+const NODE_META = [
+  { id: 'a', x: 60, y: 70, icon: TrendingDown, color: '#80d85b', delay: '0s' },
+  { id: 'b', x: 420, y: 55, icon: HeartPulse, color: '#4a90d9', delay: '0.5s' },
+  { id: 'c', x: 30, y: 390, icon: Users, color: '#7b9fd4', delay: '1s' },
+  { id: 'd', x: 400, y: 380, icon: BarChart3, color: '#80d85b', delay: '0.3s' },
+] as const
+
 const CENTER = { x: 260, y: 240 }
-const NODES = [
-  {
-    id: 'a',
-    x: 60,  y: 70,
-    icon: TrendingDown,
-    label: 'REDUCCIÓN DE COSTOS',
-    value: '−12%',
-    sub: 'siniestralidad crónica',
-    color: '#80d85b',
-    delay: '0s',
-    anim: 'floatA',
-  },
-  {
-    id: 'b',
-    x: 420, y: 55,
-    icon: HeartPulse,
-    label: 'PREVENCIÓN ACTIVA',
-    value: '5 pilares',
-    sub: 'de salud integral',
-    color: '#4a90d9',
-    delay: '0.5s',
-    anim: 'floatB',
-  },
-  {
-    id: 'c',
-    x: 30,  y: 390,
-    icon: Users,
-    label: 'GEN. SILVER',
-    value: '+50/+60',
-    sub: 'tu segmento clave',
-    color: '#7b9fd4',
-    delay: '1s',
-    anim: 'floatC',
-  },
-  {
-    id: 'd',
-    x: 400, y: 380,
-    icon: BarChart3,
-    label: 'IMPACTO CLÍNICO',
-    value: 'Medible',
-    sub: 'en indicadores de salud',
-    color: '#80d85b',
-    delay: '0.3s',
-    anim: 'floatD',
-  },
-]
 
-// Extra mini-badges on the lines (decorative)
-const BADGES = [
-  { x: 160, y: 145, label: 'GESTIÓN ACTIVA', icon: Activity, color: '#80d85b' },
-  { x: 340, y: 130, label: 'SALUD PREVENTIVA', icon: HeartPulse, color: '#4a90d9' },
-]
+function NetworkDiagram({ t }: { t: Dictionary }) {
+  const NODES = NODE_META.map((meta) => ({
+    ...meta,
+    ...t.hero.diagram.nodes[meta.id as keyof typeof t.hero.diagram.nodes],
+  }))
 
-function NetworkDiagram() {
   const W = 520
   const H = 480
 
@@ -143,14 +105,14 @@ function NetworkDiagram() {
           backdropFilter: 'blur(12px)',
         }}
       >
-        <p className="font-body text-[10px] font-bold uppercase tracking-widest text-ink-soft mb-1.5">Proactiva Salud</p>
-        <p className="font-display text-base font-bold text-navy leading-snug mb-1">Gestión activa,<br />no solo cobertura</p>
+        <p className="font-body text-[10px] font-bold uppercase tracking-widest text-ink-soft mb-1.5">{t.hero.diagram.centerBrand}</p>
+        <p className="font-display text-base font-bold text-navy leading-snug mb-1">{t.hero.diagram.centerTitleLine1}<br />{t.hero.diagram.centerTitleLine2}</p>
         <div className="w-full h-px bg-navy/8 my-2" />
-        <p className="font-body text-xs text-ink-soft">Plataforma preventiva B2B para Generación Silver</p>
+        <p className="font-body text-xs text-ink-soft">{t.hero.diagram.centerSub}</p>
       </div>
 
       {/* Peripheral nodes */}
-      {NODES.map((n, i) => {
+      {NODES.map((n) => {
         const Icon = n.icon
         const floatClass = `net-float-${n.id}`
         return (
@@ -185,6 +147,8 @@ function NetworkDiagram() {
 }
 
 export function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
@@ -195,7 +159,7 @@ export function Hero() {
         <div className="relative w-full h-full">
           <Image
             src="/hero.jpg"
-            alt="Diagrama financiero B2B de salud preventiva"
+            alt={t.hero.imageAlt}
             fill
             className="object-cover object-center"
             priority
@@ -223,32 +187,32 @@ export function Hero() {
             <div className="flex items-center gap-3">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
               <span className="font-body font-bold text-sm tracking-widest uppercase text-teal">
-                Plataforma Digital de Salud Preventiva
+                {t.hero.eyebrow}
               </span>
             </div>
             <h1 className="font-display text-2xl lg:text-3xl xl:text-4xl text-white leading-[1.15] tracking-tight">
-              Más del 45% de los ingresos totales<br />de las empresas de salud, son<br />
-              <span className="text-white/60">absorbidos por la población +50.</span>
+              {t.hero.headline.line1}<br />{t.hero.headline.line2}<br />
+              <span className="text-white/60">{t.hero.headline.line3}</span>
             </h1>
             <p className="font-body text-base text-white/70 max-w-[50ch] leading-relaxed">
-              Proactiva Salud combina <strong className="text-white font-semibold">tecnología, seguimiento humano y programas de bienestar integral</strong>, que mejoran la adherencia, ordenan la demanda asistencial y generan impacto real económico sobre el gasto médico anual.
+              {t.hero.bodyPrefix}<strong className="text-white font-semibold">{t.hero.bodyStrong}</strong>{t.hero.bodySuffix}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a href="#contacto"
                 className="inline-flex items-center justify-center gap-2 bg-teal text-white font-body font-semibold text-base px-8 py-4 rounded hover:bg-teal-dark transition-colors">
-                Solicitar presentación
+                {t.hero.ctaPrimary}
                 <ArrowRight size={18} aria-hidden="true" />
               </a>
               <a href="#impacto"
                 className="inline-flex items-center justify-center font-body font-semibold text-base text-white/75 px-8 py-4 rounded border border-white/25 hover:border-white/60 hover:text-white transition-all duration-200">
-                Ver el impacto
+                {t.hero.ctaSecondary}
               </a>
             </div>
           </div>
 
           {/* Network diagram */}
           <div className="hidden lg:flex items-center justify-center">
-            <NetworkDiagram />
+            <NetworkDiagram t={t} />
           </div>
 
         </div>

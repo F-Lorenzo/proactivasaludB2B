@@ -1,14 +1,14 @@
+'use client'
+
 import { TrendingUp, RefreshCcw, Users } from 'lucide-react'
 import { AnimateIn } from './ui/AnimateIn'
-import { PAIN_POINTS } from '@/lib/constants'
+import { useLanguage } from '@/contexts/LanguageContext'
 
-const iconMap = {
-  TrendingUp,
-  RefreshCcw,
-  Users,
-} as const
+const ICONS = [TrendingUp, RefreshCcw, Users]
 
 export function PainPoints() {
+  const { t } = useLanguage()
+
   return (
     <section id="problema" className="bg-transparent py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -19,20 +19,20 @@ export function PainPoints() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
               <span className="font-body font-bold text-sm tracking-widest uppercase text-teal">
-                Costo asistencial
+                {t.painPoints.eyebrow}
               </span>
             </div>
             <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight">
-              El mayor impacto económico<br />
-              <span className="text-white">está en la cronicidad.</span>
+              {t.painPoints.headline1}<br />
+              <span className="text-white">{t.painPoints.headline2}</span>
             </h2>
           </div>
         </AnimateIn>
 
         {/* Pain cards */}
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
-          {PAIN_POINTS.map((point, i) => {
-            const Icon = iconMap[point.icon as keyof typeof iconMap]
+          {t.painPoints.items.map((point, i) => {
+            const Icon = ICONS[i]
             return (
               <AnimateIn key={point.stat} delay={i * 120}>
                 <div className="bg-white/70 backdrop-blur-sm border border-navy/8 rounded-2xl p-8 lg:p-10 flex flex-col gap-6 h-full shadow-card">
@@ -71,9 +71,8 @@ export function PainPoints() {
           <div className="mt-12 lg:mt-16 bg-navy rounded-2xl px-8 py-6 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex-1">
               <p className="font-body text-base text-white/80 leading-relaxed">
-                <strong className="text-white font-semibold">La ecuación es simple:</strong>{' '}
-                sin prevención activa, los afiliados mayores consumen cada vez más servicios costosos.
-                La pregunta no es si va a pasar, sino cuándo.
+                <strong className="text-white font-semibold">{t.painPoints.calloutStrong}</strong>
+                {t.painPoints.calloutRest}
               </p>
             </div>
           </div>

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react'
 import { ArrowRight, Mail, MessageCircle } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 type FormState = {
   empresa: string
@@ -23,6 +24,7 @@ const EMPTY: FormState = {
 }
 
 export function ContactSection() {
+  const { t } = useLanguage()
   const [form, setForm] = useState<FormState>(EMPTY)
   const [sent, setSent] = useState(false)
 
@@ -51,17 +53,15 @@ export function ContactSection() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
               <span className="font-body font-bold text-sm tracking-widest uppercase text-teal">
-                Contacto
+                {t.contact.eyebrow}
               </span>
             </div>
             <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-white leading-tight tracking-tight mb-6">
-              Menos gasto reactivo,<br />
-              más prevención cuantificable.
+              {t.contact.headline1}<br />
+              {t.contact.headline2}
             </h2>
             <p className="font-body text-white/60 text-base leading-relaxed mb-12 max-w-[48ch]">
-              Si gestiona una Empresa que brinda servicios de salud a la población Silver +50,
-              descubra cómo Proactiva Salud puede integrarse a su operación para reducir presión
-              asistencial, mejorar adherencia y generar impacto económico comprobable.
+              {t.contact.body}
             </p>
 
             {/* Contact details */}
@@ -74,7 +74,7 @@ export function ContactSection() {
                   <Mail size={16} className="text-teal" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-body text-xs text-white/40 uppercase tracking-wide mb-0.5">Email</p>
+                  <p className="font-body text-xs text-white/40 uppercase tracking-wide mb-0.5">{t.contact.emailLabel}</p>
                   <p className="font-body text-base text-white font-semibold">{CONTACT_INFO.email}</p>
                 </div>
               </a>
@@ -89,7 +89,7 @@ export function ContactSection() {
                   <MessageCircle size={16} className="text-teal" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="font-body text-xs text-white/40 uppercase tracking-wide mb-0.5">WhatsApp</p>
+                  <p className="font-body text-xs text-white/40 uppercase tracking-wide mb-0.5">{t.contact.whatsappLabel}</p>
                   <p className="font-body text-base text-white font-semibold">{CONTACT_INFO.whatsapp}</p>
                 </div>
               </a>
@@ -97,7 +97,7 @@ export function ContactSection() {
 
             {/* Company */}
             <div className="mt-12 pt-8 border-t border-white/10">
-              <p className="font-body text-sm text-white/40">{CONTACT_INFO.company}</p>
+              <p className="font-body text-sm text-white/40">{t.common.companyTagline}</p>
             </div>
           </div>
 
@@ -110,34 +110,34 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h3 className="font-display text-2xl text-navy font-bold mb-3">
-                    Recibimos su consulta
+                    {t.contact.form.successTitle}
                   </h3>
                   <p className="font-body text-base text-ink-mid leading-relaxed max-w-[36ch] mx-auto">
-                    Nos pondremos en contacto con usted a la brevedad para coordinar una presentación.
+                    {t.contact.form.successBody}
                   </p>
                 </div>
               </div>
             ) : (
               <>
                 <h3 className="font-display text-xl text-navy font-bold mb-2">
-                  Solicitar presentación
+                  {t.contact.form.title}
                 </h3>
                 <p className="font-body text-sm text-ink-soft mb-8">
-                  Complete el formulario y un especialista lo contactará.
+                  {t.contact.form.subtitle}
                 </p>
 
                 <form onSubmit={handleSubmit} noValidate className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="empresa" className="font-body text-xs font-semibold text-ink-mid uppercase tracking-wide block mb-1.5">
-                        Empresa *
+                        {t.contact.form.empresaLabel}
                       </label>
                       <input
                         id="empresa"
                         name="empresa"
                         type="text"
                         required
-                        placeholder="Nombre de la empresa"
+                        placeholder={t.contact.form.empresaPlaceholder}
                         value={form.empresa}
                         onChange={handleChange}
                         className={inputClass}
@@ -145,7 +145,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <label htmlFor="tipo" className="font-body text-xs font-semibold text-ink-mid uppercase tracking-wide block mb-1.5">
-                        Tipo *
+                        {t.contact.form.tipoLabel}
                       </label>
                       <select
                         id="tipo"
@@ -155,11 +155,11 @@ export function ContactSection() {
                         onChange={handleChange}
                         className={inputClass}
                       >
-                        <option value="">Seleccionar tipo</option>
-                        <option value="prepaga">Prepaga / Medicina prepaga</option>
-                        <option value="aseguradora">Aseguradora de vida</option>
-                        <option value="mutual">Mutual / Obra social</option>
-                        <option value="otro">Otro</option>
+                        <option value="">{t.contact.form.tipoPlaceholder}</option>
+                        <option value="prepaga">{t.contact.form.tipoOptions.prepaga}</option>
+                        <option value="aseguradora">{t.contact.form.tipoOptions.aseguradora}</option>
+                        <option value="mutual">{t.contact.form.tipoOptions.mutual}</option>
+                        <option value="otro">{t.contact.form.tipoOptions.otro}</option>
                       </select>
                     </div>
                   </div>
@@ -167,14 +167,14 @@ export function ContactSection() {
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="nombre" className="font-body text-xs font-semibold text-ink-mid uppercase tracking-wide block mb-1.5">
-                        Nombre *
+                        {t.contact.form.nombreLabel}
                       </label>
                       <input
                         id="nombre"
                         name="nombre"
                         type="text"
                         required
-                        placeholder="Su nombre"
+                        placeholder={t.contact.form.nombrePlaceholder}
                         value={form.nombre}
                         onChange={handleChange}
                         className={inputClass}
@@ -182,13 +182,13 @@ export function ContactSection() {
                     </div>
                     <div>
                       <label htmlFor="telefono" className="font-body text-xs font-semibold text-ink-mid uppercase tracking-wide block mb-1.5">
-                        Teléfono
+                        {t.contact.form.telefonoLabel}
                       </label>
                       <input
                         id="telefono"
                         name="telefono"
                         type="tel"
-                        placeholder="+54 11 ..."
+                        placeholder={t.contact.form.telefonoPlaceholder}
                         value={form.telefono}
                         onChange={handleChange}
                         className={inputClass}
@@ -198,14 +198,14 @@ export function ContactSection() {
 
                   <div>
                     <label htmlFor="email" className="font-body text-xs font-semibold text-ink-mid uppercase tracking-wide block mb-1.5">
-                      Email corporativo *
+                      {t.contact.form.emailLabel}
                     </label>
                     <input
                       id="email"
                       name="email"
                       type="email"
                       required
-                      placeholder="usted@empresa.com"
+                      placeholder={t.contact.form.emailPlaceholder}
                       value={form.email}
                       onChange={handleChange}
                       className={inputClass}
@@ -214,13 +214,13 @@ export function ContactSection() {
 
                   <div>
                     <label htmlFor="mensaje" className="font-body text-xs font-semibold text-ink-mid uppercase tracking-wide block mb-1.5">
-                      Mensaje (opcional)
+                      {t.contact.form.mensajeLabel}
                     </label>
                     <textarea
                       id="mensaje"
                       name="mensaje"
                       rows={3}
-                      placeholder="Cuéntenos sobre su cartera o consulta específica"
+                      placeholder={t.contact.form.mensajePlaceholder}
                       value={form.mensaje}
                       onChange={handleChange}
                       className={`${inputClass} resize-none`}
@@ -231,7 +231,7 @@ export function ContactSection() {
                     type="submit"
                     className="w-full inline-flex items-center justify-center gap-2 bg-teal text-white font-body font-semibold text-base px-8 py-4 rounded-lg hover:bg-teal-dark transition-colors mt-2"
                   >
-                    Solicitar presentación
+                    {t.contact.form.submit}
                     <ArrowRight size={18} aria-hidden="true" />
                   </button>
                 </form>

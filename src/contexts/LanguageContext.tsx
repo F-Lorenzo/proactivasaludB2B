@@ -1,8 +1,9 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
+import { dictionaries, type Language, type Dictionary } from '@/lib/i18n'
 
-export type Language = 'es' | 'en' | 'pt'
+export type { Language } from '@/lib/i18n'
 
 const COOKIE_NAME = 'ps_lang'
 const STORAGE_KEY = 'ps_lang'
@@ -39,34 +40,38 @@ function writeLocalStorage(value: Language) {
 }
 
 type LanguageContextValue = {
-  language: Language
-  setLanguage: (value: Language) => void
+  lang: Language
+  setLang: (value: Language) => void
+  t: Dictionary
 }
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE)
+  const [lang, setLangState] = useState<Language>(DEFAULT_LANGUAGE)
 
   useEffect(() => {
+    // Cookie/localStorage only exist in the browser, so the real language can't be
+    // read during SSR — this one-time sync on mount is the only way to pick it up.
     const resolved = readCookie() ?? readLocalStorage() ?? DEFAULT_LANGUAGE
-    setLanguageState(resolved)
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLangState(resolved)
     writeCookie(resolved)
     writeLocalStorage(resolved)
   }, [])
 
   useEffect(() => {
-    document.documentElement.lang = language
-  }, [language])
+    document.documentElement.lang = lang
+  }, [lang])
 
-  function setLanguage(value: Language) {
-    setLanguageState(value)
+  function setLang(value: Language) {
+    setLangState(value)
     writeLocalStorage(value)
     writeCookie(value)
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ lang, setLang, t: dictionaries[lang] }}>
       {children}
     </LanguageContext.Provider>
   )

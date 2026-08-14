@@ -1,17 +1,22 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, MessageCircle } from 'lucide-react'
 import { CONTACT_INFO } from '@/lib/constants'
-
-const NAV_LINKS = [
-  { label: 'Inicio', href: '#main' },
-  { label: 'Costo asistencial', href: '#problema' },
-  { label: 'Modelo preventivo', href: '#solucion' },
-  { label: 'Impacto económico', href: '#impacto' },
-  { label: 'Servicios', href: '#servicios' },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export function Footer() {
+  const { t } = useLanguage()
+
+  const NAV_LINKS = [
+    { label: t.nav.home, href: '#main' },
+    { label: t.nav.problema, href: '#problema' },
+    { label: t.nav.solucion, href: '#solucion' },
+    { label: t.nav.impacto, href: '#impacto' },
+    { label: t.nav.servicios, href: '#servicios' },
+  ]
+
   return (
     <footer className="bg-navy border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
@@ -23,22 +28,21 @@ export function Footer() {
             <Link href="/" className="inline-flex mb-5">
               <Image
                 src="/logo.png"
-                alt="ProActiva Salud"
+                alt={t.common.logoAlt}
                 width={160}
                 height={80}
                 className="h-20 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="font-body text-sm text-white leading-relaxed mb-6">
-              Plataforma de bienestar y acompañamiento humano, para personas pertenecientes
-              a la Generación Silver, integradas en aseguradoras y empresas de salud.
+              {t.footer.brandDescription}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
             <p className="font-body font-semibold text-xs tracking-widest uppercase text-white/30 mb-5">
-              Secciones
+              {t.footer.seccionesLabel}
             </p>
             <nav aria-label="Pie de página">
               <ul className="space-y-3">
@@ -59,7 +63,7 @@ export function Footer() {
           {/* Contact */}
           <div>
             <p className="font-body font-semibold text-xs tracking-widest uppercase text-white/30 mb-5">
-              Contacto
+              {t.footer.contactoLabel}
             </p>
             <div className="space-y-4">
               <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-3 group">
@@ -87,10 +91,10 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="font-body text-xs text-white/25">
-            © 2026 Proactiva Salud — {CONTACT_INFO.company}
+            {t.footer.copyrightPrefix}{t.common.companyTagline}
           </p>
           <p className="font-body text-xs text-white/20">
-            Todos los derechos reservados
+            {t.footer.rights}
           </p>
         </div>
 

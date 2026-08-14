@@ -2,7 +2,14 @@
 
 import Image from 'next/image'
 import { AnimateIn } from './ui/AnimateIn'
-import { IMPACT_STATS } from '@/lib/constants'
+import { useLanguage } from '@/contexts/LanguageContext'
+
+const STATS_META = [
+  { color: 'green' },
+  { color: 'teal' },
+  { color: 'navy' },
+  { color: 'navy' },
+] as const
 
 function PulsingArrow({ direction = 'down', color = '#80d85b' }: { direction?: 'up' | 'down'; color?: string }) {
   const isUp = direction === 'up'
@@ -52,6 +59,9 @@ const colorMap = {
 } as const
 
 export function Impact() {
+  const { t } = useLanguage()
+  const stats = t.impact.stats.map((stat, i) => ({ ...stat, color: STATS_META[i].color }))
+
   return (
     <section id="impacto" className="bg-navy-muted py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -62,12 +72,12 @@ export function Impact() {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-10 bg-teal" aria-hidden="true" />
               <span className="font-body font-bold text-sm tracking-widest uppercase text-navy">
-                Impacto económico
+                {t.impact.eyebrow}
               </span>
             </div>
             <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-navy leading-tight tracking-tight">
-              Lo que cambia cuando se<br />
-              <span className="text-teal">actúa antes del problema.</span>
+              {t.impact.headline1}<br />
+              <span className="text-teal">{t.impact.headlineColored}</span>
             </h2>
           </div>
         </AnimateIn>
@@ -77,7 +87,7 @@ export function Impact() {
           <div className="relative w-full h-56 lg:h-72 rounded-3xl overflow-hidden mb-10 lg:mb-12">
             <Image
               src="/banner-impact.jpg"
-              alt="Adulta mayor caminando, activa y saludable gracias a gestión preventiva"
+              alt={t.impact.imageAlt}
               fill
               className="object-cover object-top"
               sizes="(max-width: 1280px) 100vw, 1280px"
@@ -86,10 +96,10 @@ export function Impact() {
             <div className="absolute inset-0 flex items-center px-8 lg:px-12">
               <blockquote className="max-w-md">
                 <p className="font-display text-xl lg:text-2xl text-white leading-snug font-bold">
-                  "Prevenir cuesta menos que tratar. Siempre."
+                  &ldquo;{t.impact.quote}&rdquo;
                 </p>
                 <p className="font-body text-sm text-white/60 mt-3">
-                  Principio de salud preventiva en poblaciones +50
+                  {t.impact.quoteSub}
                 </p>
               </blockquote>
             </div>
@@ -98,7 +108,7 @@ export function Impact() {
 
         {/* Stats grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
-          {IMPACT_STATS.map((stat, i) => {
+          {stats.map((stat, i) => {
             const isMain = stat.color === 'green'
             const colors = colorMap[stat.color as keyof typeof colorMap] ?? colorMap.navy
             return (
@@ -133,9 +143,7 @@ export function Impact() {
         {/* Disclaimer */}
         <AnimateIn delay={450}>
           <p className="mt-10 font-body text-sm text-ink-mid text-center max-w-2xl mx-auto leading-relaxed">
-            Proyecciones basadas en estudios de salud preventiva en poblaciones +50. Los resultados
-            reales dependen del tamaño y perfil de la cartera. El piloto generará datos específicos
-            para su empresa.
+            {t.impact.disclaimer}
           </p>
         </AnimateIn>
 

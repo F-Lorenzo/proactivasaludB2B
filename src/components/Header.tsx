@@ -3,24 +3,27 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-
-const NAV = [
-  { label: 'Página principal', href: 'https://www.proactivasalud.com', external: true },
-  { label: 'Inicio', href: '#main' },
-  { label: 'Costo asistencial', href: '#problema' },
-  { label: 'Modelo preventivo', href: '#solucion' },
-  { label: 'Impacto económico', href: '#impacto' },
-  { label: 'Servicios', href: '#servicios' },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 24)
     window.addEventListener('scroll', fn, { passive: true })
     return () => window.removeEventListener('scroll', fn)
   }, [])
+
+  const NAV = [
+    { label: t.nav.mainSite, href: 'https://www.proactivasalud.com', external: true },
+    { label: t.nav.home, href: '#main' },
+    { label: t.nav.problema, href: '#problema' },
+    { label: t.nav.solucion, href: '#solucion' },
+    { label: t.nav.impacto, href: '#impacto' },
+    { label: t.nav.servicios, href: '#servicios' },
+  ]
 
   return (
     <header
@@ -35,7 +38,7 @@ export function Header() {
         <Link href="/" className="flex items-center group">
           <Image
             src="/logo.png"
-            alt="ProActiva Salud"
+            alt={t.common.logoAlt}
             width={250}
             height={125}
             className="h-[125px] w-auto object-contain"
@@ -57,17 +60,20 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA */}
-        <a
-          href="#contacto"
-          className={`font-body font-semibold text-sm px-5 py-2.5 rounded transition-all duration-200 ${
-            scrolled
-              ? 'bg-navy text-white hover:bg-navy-mid'
-              : 'bg-teal text-white hover:bg-teal-dark'
-          }`}
-        >
-          Solicitar reunión
-        </a>
+        {/* Language switcher + CTA */}
+        <div className="flex items-center gap-4">
+          <LanguageSwitcher />
+          <a
+            href="#contacto"
+            className={`font-body font-semibold text-sm px-5 py-2.5 rounded transition-all duration-200 ${
+              scrolled
+                ? 'bg-navy text-white hover:bg-navy-mid'
+                : 'bg-teal text-white hover:bg-teal-dark'
+            }`}
+          >
+            {t.nav.cta}
+          </a>
+        </div>
       </div>
     </header>
   )
