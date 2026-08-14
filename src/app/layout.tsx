@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Libre_Baskerville, Figtree } from 'next/font/google'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 import './globals.css'
 
 const libreBaskerville = Libre_Baskerville({
@@ -41,13 +42,15 @@ export default function RootLayout({
       className={`${libreBaskerville.variable} ${figtree.variable} h-full`}
     >
       <body className="min-h-full flex flex-col antialiased">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-navy focus:text-white focus:rounded-lg"
-        >
-          Saltar al contenido
-        </a>
-        {children}
+        <LanguageProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-navy focus:text-white focus:rounded-lg"
+          >
+            Saltar al contenido
+          </a>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )
