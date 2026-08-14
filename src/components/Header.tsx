@@ -33,9 +33,9 @@ export function Header() {
           : 'bg-white shadow-card'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-5 xl:px-8 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
+        <Link href="/" className="flex items-center group flex-shrink-0">
           <Image
             src="/logo.png"
             alt={t.common.logoAlt}
@@ -47,13 +47,13 @@ export function Header() {
         </Link>
 
         {/* Nav */}
-        <nav className="hidden lg:flex items-center gap-6" aria-label="Navegación principal">
+        <nav className="hidden xl:flex items-center gap-4 flex-shrink min-w-0" aria-label="Navegación principal">
           {NAV.map((item) => (
             <a
               key={item.href}
               href={item.href}
               {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              className="font-body text-base font-bold text-navy hover:text-teal transition-colors"
+              className="font-body text-sm font-bold text-navy hover:text-teal transition-colors whitespace-nowrap"
             >
               {item.label}
             </a>
@@ -61,11 +61,11 @@ export function Header() {
         </nav>
 
         {/* Language switcher + CTA */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <LanguageSwitcher />
           <a
             href="#contacto"
-            className={`font-body font-semibold text-sm px-5 py-2.5 rounded transition-all duration-200 ${
+            className={`font-body font-semibold text-sm px-4 py-2.5 rounded transition-all duration-200 whitespace-nowrap ${
               scrolled
                 ? 'bg-navy text-white hover:bg-navy-mid'
                 : 'bg-teal text-white hover:bg-teal-dark'

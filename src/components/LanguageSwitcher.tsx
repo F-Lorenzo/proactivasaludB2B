@@ -13,7 +13,7 @@ export function LanguageSwitcher() {
   const { lang, setLang, t } = useLanguage()
 
   return (
-    <div className="flex items-center gap-2" role="group" aria-label="Idioma / Language / Idioma">
+    <div className="flex items-center gap-1.5" role="group" aria-label="Idioma / Language / Idioma">
       {FLAGS.map(({ lang: flagLang, flag }) => (
         <button
           key={flagLang}
@@ -21,17 +21,17 @@ export function LanguageSwitcher() {
           aria-pressed={lang === flagLang}
           aria-label={t.languageSwitcher[flagLang]}
           onClick={() => setLang(flagLang)}
-          className={`w-7 h-7 rounded-full overflow-hidden flex-shrink-0 transition-all duration-200 ${
+          className={`w-6 h-6 rounded-full overflow-hidden flex-shrink-0 transition-all duration-200 ${
             lang === flagLang
-              ? 'ring-2 ring-teal ring-offset-2 scale-110'
+              ? 'ring-2 ring-teal ring-offset-1 scale-110'
               : 'ring-1 ring-navy/15 opacity-60 hover:opacity-100'
           }`}
         >
           <Image
             src={flag}
             alt={t.languageSwitcher[flagLang]}
-            width={28}
-            height={28}
+            width={24}
+            height={24}
             className="w-full h-full object-cover"
           />
         </button>
