@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from 'react'
 import { ArrowRight, Mail, MessageCircle } from 'lucide-react'
-import { CONTACT_INFO } from '@/lib/constants'
+import { CONTACT_INFO, WEB3FORMS_ACCESS_KEY } from '@/lib/constants'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 type FormState = {
@@ -27,6 +27,8 @@ export function ContactSection() {
   const { t } = useLanguage()
   const [form, setForm] = useState<FormState>(EMPTY)
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -34,9 +36,42 @@ export function ContactSection() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSent(true)
+
+    if (new FormData(e.currentTarget).get('botcheck')) return
+
+    setSending(true)
+    setError(false)
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Nueva consulta B2B — ${form.empresa}`,
+          from_name: form.nombre,
+          empresa: form.empresa,
+          tipo: form.tipo,
+          nombre: form.nombre,
+          telefono: form.telefono,
+          email: form.email,
+          mensaje: form.mensaje,
+        }),
+      })
+      const result = await response.json()
+
+      if (result.success) {
+        setSent(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   const inputClass =
@@ -127,6 +162,8 @@ export function ContactSection() {
                 </p>
 
                 <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                  <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="empresa" className="font-body text-xs font-semibold text-ink-mid uppercase tracking-wide block mb-1.5">
@@ -227,12 +264,19 @@ export function ContactSection() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="font-body text-sm text-red-600" role="alert">
+                      {t.contact.form.errorMessage}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-teal text-white font-body font-semibold text-base px-8 py-4 rounded-lg hover:bg-teal-dark transition-colors mt-2"
+                    disabled={sending}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-teal text-white font-body font-semibold text-base px-8 py-4 rounded-lg hover:bg-teal-dark transition-colors mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {t.contact.form.submit}
-                    <ArrowRight size={18} aria-hidden="true" />
+                    {sending ? t.contact.form.submitting : t.contact.form.submit}
+                    {!sending && <ArrowRight size={18} aria-hidden="true" />}
                   </button>
                 </form>
               </>

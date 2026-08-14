@@ -273,8 +273,10 @@ export const es = {
       mensajeLabel: 'Mensaje (opcional)',
       mensajePlaceholder: 'Cuéntenos sobre su cartera o consulta específica',
       submit: 'Solicitar presentación',
+      submitting: 'Enviando...',
       successTitle: 'Recibimos su consulta',
       successBody: 'Nos pondremos en contacto con usted a la brevedad para coordinar una presentación.',
+      errorMessage: 'No pudimos enviar su consulta. Por favor intente nuevamente o escríbanos por WhatsApp.',
     },
   },
 

@@ -275,8 +275,10 @@ export const en: Dictionary = {
       mensajeLabel: 'Message (optional)',
       mensajePlaceholder: 'Tell us about your portfolio or specific question',
       submit: 'Request a presentation',
+      submitting: 'Sending...',
       successTitle: 'We received your inquiry',
       successBody: 'We will contact you shortly to schedule a presentation.',
+      errorMessage: 'We could not send your inquiry. Please try again or reach us on WhatsApp.',
     },
   },
 

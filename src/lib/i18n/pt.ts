@@ -275,8 +275,10 @@ export const pt: Dictionary = {
       mensajeLabel: 'Mensagem (opcional)',
       mensajePlaceholder: 'Conte-nos sobre sua carteira ou dúvida específica',
       submit: 'Solicitar apresentação',
+      submitting: 'Enviando...',
       successTitle: 'Recebemos sua solicitação',
       successBody: 'Entraremos em contato em breve para agendar uma apresentação.',
+      errorMessage: 'Não conseguimos enviar sua solicitação. Tente novamente ou fale conosco pelo WhatsApp.',
     },
   },
 
