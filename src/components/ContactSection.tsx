@@ -161,7 +161,7 @@ export function ContactSection() {
                   {t.contact.form.subtitle}
                 </p>
 
-                <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
                   <div className="grid sm:grid-cols-2 gap-4">
@@ -225,6 +225,7 @@ export function ContactSection() {
                         id="telefono"
                         name="telefono"
                         type="tel"
+                        required
                         placeholder={t.contact.form.telefonoPlaceholder}
                         value={form.telefono}
                         onChange={handleChange}
@@ -257,6 +258,7 @@ export function ContactSection() {
                       id="mensaje"
                       name="mensaje"
                       rows={3}
+                      required
                       placeholder={t.contact.form.mensajePlaceholder}
                       value={form.mensaje}
                       onChange={handleChange}
