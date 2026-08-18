@@ -174,6 +174,10 @@ export function ContactSection() {
                         name="empresa"
                         type="text"
                         required
+                        minLength={1}
+                        maxLength={32}
+                        pattern="[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\s.,&'\-]{0,31}"
+                        title={t.contact.form.nameFieldHint}
                         placeholder={t.contact.form.empresaPlaceholder}
                         value={form.empresa}
                         onChange={handleChange}
@@ -211,6 +215,10 @@ export function ContactSection() {
                         name="nombre"
                         type="text"
                         required
+                        minLength={1}
+                        maxLength={32}
+                        pattern="[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ\s.,&'\-]{0,31}"
+                        title={t.contact.form.nameFieldHint}
                         placeholder={t.contact.form.nombrePlaceholder}
                         value={form.nombre}
                         onChange={handleChange}
@@ -225,7 +233,10 @@ export function ContactSection() {
                         id="telefono"
                         name="telefono"
                         type="tel"
+                        inputMode="tel"
                         required
+                        pattern="\+?[0-9\s\-\(\)]{7,20}"
+                        title={t.contact.form.phoneFieldHint}
                         placeholder={t.contact.form.telefonoPlaceholder}
                         value={form.telefono}
                         onChange={handleChange}
@@ -243,6 +254,8 @@ export function ContactSection() {
                       name="email"
                       type="email"
                       required
+                      pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                      title={t.contact.form.emailFieldHint}
                       placeholder={t.contact.form.emailPlaceholder}
                       value={form.email}
                       onChange={handleChange}

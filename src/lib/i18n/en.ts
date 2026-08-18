@@ -258,6 +258,7 @@ export const en: Dictionary = {
       subtitle: 'Fill out the form and a specialist will contact you.',
       empresaLabel: 'Company *',
       empresaPlaceholder: 'Company name',
+      nameFieldHint: 'Letters only, between 1 and 32 characters',
       tipoLabel: 'Type *',
       tipoPlaceholder: 'Select type',
       tipoOptions: {
@@ -270,8 +271,10 @@ export const en: Dictionary = {
       nombrePlaceholder: 'Your name',
       telefonoLabel: 'Phone *',
       telefonoPlaceholder: '+54 11 ...',
+      phoneFieldHint: 'Enter a valid phone number (7 to 20 digits, may include +, spaces or dashes)',
       emailLabel: 'Corporate email *',
       emailPlaceholder: 'you@company.com',
+      emailFieldHint: 'Enter a valid email (example: you@company.com)',
       mensajeLabel: 'Message *',
       mensajePlaceholder: 'Tell us about your portfolio or specific question',
       submit: 'Request a presentation',

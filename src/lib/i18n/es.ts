@@ -256,6 +256,7 @@ export const es = {
       subtitle: 'Complete el formulario y un especialista lo contactará.',
       empresaLabel: 'Empresa *',
       empresaPlaceholder: 'Nombre de la empresa',
+      nameFieldHint: 'Solo letras, entre 1 y 32 caracteres',
       tipoLabel: 'Tipo *',
       tipoPlaceholder: 'Seleccionar tipo',
       tipoOptions: {
@@ -268,8 +269,10 @@ export const es = {
       nombrePlaceholder: 'Su nombre',
       telefonoLabel: 'Teléfono *',
       telefonoPlaceholder: '+54 11 ...',
+      phoneFieldHint: 'Ingrese un número de teléfono válido (7 a 20 dígitos, puede incluir +, espacios o guiones)',
       emailLabel: 'Email corporativo *',
       emailPlaceholder: 'usted@empresa.com',
+      emailFieldHint: 'Ingrese un email válido (ejemplo: usted@empresa.com)',
       mensajeLabel: 'Mensaje *',
       mensajePlaceholder: 'Cuéntenos sobre su cartera o consulta específica',
       submit: 'Solicitar presentación',

@@ -258,6 +258,7 @@ export const pt: Dictionary = {
       subtitle: 'Preencha o formulário e um especialista entrará em contato.',
       empresaLabel: 'Empresa *',
       empresaPlaceholder: 'Nome da empresa',
+      nameFieldHint: 'Somente letras, entre 1 e 32 caracteres',
       tipoLabel: 'Tipo *',
       tipoPlaceholder: 'Selecionar tipo',
       tipoOptions: {
@@ -270,8 +271,10 @@ export const pt: Dictionary = {
       nombrePlaceholder: 'Seu nome',
       telefonoLabel: 'Telefone *',
       telefonoPlaceholder: '+54 11 ...',
+      phoneFieldHint: 'Digite um telefone válido (7 a 20 dígitos, pode incluir +, espaços ou traços)',
       emailLabel: 'Email corporativo *',
       emailPlaceholder: 'voce@empresa.com',
+      emailFieldHint: 'Digite um email válido (exemplo: voce@empresa.com)',
       mensajeLabel: 'Mensagem *',
       mensajePlaceholder: 'Conte-nos sobre sua carteira ou dúvida específica',
       submit: 'Solicitar apresentação',
